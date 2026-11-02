@@ -305,7 +305,7 @@ p {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg,rgba(8,24,18,.83),rgba(8,24,18,.53) 48%,rgba(8,24,18,.20));
+  background: linear-gradient(90deg, rgba(8,24,18,.84) 0%, rgba(8,24,18,.62) 36%, rgba(8,24,18,.24) 58%, rgba(8,24,18,0) 70%);
   z-index: 1;
 }
 
