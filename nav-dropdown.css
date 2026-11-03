@@ -1,0 +1,44 @@
+/* G2M NAVIGATION STUDY 01 — Dark floating dropdown. Standalone, shared across all three pages. */
+.nav .navlinks { position: relative; }
+.nav-service-group { position: relative; display: flex; align-items: center; gap: 3px; }
+.nav-service-group > a { white-space: nowrap; }
+.nav-service-toggle { display: grid; place-items:center; padding: 5px 4px; margin-left: 0; border: 0; color: #e3eee6; background: transparent; cursor: pointer; border-radius: 5px; transition: color .2s ease, transform .2s ease; }
+.nav-service-toggle:hover, .nav-service-toggle:focus-visible { color: #f1d875; outline-offset: 3px; }
+.nav-service-toggle svg { height: 13px; width: 13px; transition: transform .25s ease; }
+.nav-service-group.is-open .nav-service-toggle svg { transform: rotate(180deg); }
+/* The transparent pointer bridge prevents closure between the pill and panel. */
+.nav-service-panel { position: absolute; top: calc(100% + 21px); right: -38px; width: min(336px, 83vw); padding: 12px; border-radius: 19px; color: #f4faf5; background: linear-gradient(155deg, #214f3e 0%, #123126 47%, #07140f 100%); border: 1px solid rgba(192,226,207,.25); box-shadow: 0 22px 54px rgba(3,22,13,.36), inset 0 1px rgba(255,255,255,.08); visibility: hidden; opacity: 0; transform: translateY(-7px) scale(.985); pointer-events: none; transition: opacity .19s ease, transform .19s ease, visibility .19s; z-index: 180; }
+.nav-service-panel::before { content: ''; position: absolute; bottom: 100%; left: 0; width: 100%; height: 28px; }
+.nav-service-group.is-open .nav-service-panel { opacity: 1; transform: translateY(0) scale(1); visibility: visible; pointer-events: auto; }
+.nav-service-panel .nav-service-overline { padding: 9px 13px 11px; font-size: 10px; color: #b5d6bf; font-weight: 800; letter-spacing: .16em; }
+.nav-service-panel .nav-service-item { display: grid; grid-template-columns: 23px 1fr 12px; gap: 11px; align-items: start; padding: 13px 12px; border-radius: 10px; border: 1px solid transparent; text-decoration: none; color: #f6faf6; transition: background .17s ease, border-color .17s ease; }
+.nav-service-panel .nav-service-item:hover, .nav-service-panel .nav-service-item:focus-visible { color: #fff; background: rgba(188,222,200,.11); border-color: rgba(199,236,207,.18); outline-offset: 2px; }
+.nav-service-panel .nav-service-no { font-size: 10px; color: #f1d875; letter-spacing: .03em; padding-top: 3px; font-variant-numeric: tabular-nums; }
+.nav-service-panel .nav-service-title { font-size: 13px; line-height: 1.3; font-weight: 700; display:block; }
+.nav-service-panel .nav-service-description { display:block; color: #bfd3c6; font-size: 11px; line-height: 1.55; font-weight: 400; margin-top: 3px; }
+.nav-service-panel .nav-service-arrow { font-size: 14px; color: #f1d875; }
+.nav-service-panel .nav-service-all { display: flex; align-items:center; justify-content:space-between; padding: 14px 12px 7px; margin: 9px 2px 0; border-top: 1px solid rgba(255,255,255,.17); font-size: 11px; letter-spacing: .02em; color:#d5e9d9; font-weight: 700; }
+.nav-service-panel .nav-service-all:hover { color: #f1d875; }
+/* Unified solid brand-green pill and black shading, including secondary pages. */
+.nav.floating { background: #14382e; backdrop-filter: none; -webkit-backdrop-filter: none; box-shadow: 0 16px 35px rgba(0,0,0,.23), 0 1px 0 rgba(255,255,255,.12) inset; }
+.nav.floating::before { opacity: 1; }
+/* Secondary pages get the same overlay treatment already used on the homepage. */
+body:not(.home-page) .nav { isolation: isolate; }
+body:not(.home-page) .nav::before { content: ''; position:absolute; inset:0; border-radius:inherit; background:linear-gradient(180deg,transparent 0%,rgba(0,0,0,.08) 34%,rgba(0,0,0,.35) 72%,rgba(0,0,0,.68) 100%); opacity: 0; pointer-events:none; z-index:-1; transition:opacity .55s ease; }
+body:not(.home-page) .nav.floating::before { opacity:1; }
+.mobile-service-group { border-bottom:1px solid rgba(255,255,255,.15); }
+.mobile-links .mobile-service-group > summary { display:flex; align-items:center; justify-content:space-between; padding:14px; color:#fff; cursor:pointer; list-style:none; font-weight:650; }
+.mobile-links .mobile-service-group > summary::-webkit-details-marker {display:none;}
+.mobile-service-group > summary::after { content:'+'; font-size:19px; line-height:1; color:#f1d875; }
+.mobile-service-group[open] > summary::after {content:'−';}
+.mobile-links .mobile-service-group a { padding:12px 16px 12px 29px; font-size:12px; background:rgba(1,12,6,.16); }
+.mobile-links .mobile-service-group a:last-child { border-bottom:none; }
+@media (max-width: 850px) { .nav-service-group {display:none;} .nav-service-panel {display:none;} }
+@media (prefers-reduced-motion:reduce) { .nav-service-panel, .nav-service-toggle svg {transition:none;} }
+
+/* STUDY 02 / Methodology dropdown shares the established dark panel style. */
+.nav-method-group .nav-service-panel { right: -66px; }
+.nav-method-group .nav-service-overline { color: #c8d8f3; }
+.nav-method-group .nav-service-no { color: #add0ee; }
+.nav-method-group .nav-service-item:hover .nav-service-arrow { color: #add0ee; }
+@media (max-width:850px) { .nav-method-group {display:none;} }

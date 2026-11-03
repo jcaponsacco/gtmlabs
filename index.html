@@ -10,8 +10,9 @@
    G2M Labs | Homepage Foundation 17
   </title>
 <link href="styles.css" rel="stylesheet"/>
+<link rel="stylesheet" href="nav-dropdown.css">
 </head>
-<body>
+<body class="home-page">
 <!-- ================================================================
   G2M LABS — EDITABLE HOMEPAGE FOUNDATION 16 / OCTOBER 2026
   EDIT MAP:
@@ -42,12 +43,10 @@
 <a href="#pipeline">
      The problem
     </a>
-<a href="methodology.html">
-     Our methodology
-    </a>
-<a href="help.html">
+<div class="nav-service-group nav-method-group"><a href="methodology.html" data-nav-method-link>Our methodology</a><button type="button" class="nav-service-toggle" aria-expanded="false" aria-controls="methodologyDropdown" aria-label="Show methodology sections"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button><div class="nav-service-panel" id="methodologyDropdown" aria-label="Methodology sections" aria-hidden="true"><div class="nav-service-overline">G2M / VELOCITY™ METHODOLOGY</div><a class="nav-service-item" href="methodology.html#intelligence"><span class="nav-service-no">01</span><span><span class="nav-service-title">Commercial Intelligence</span><span class="nav-service-description">Connect the signals. Find the next move.</span></span><span class="nav-service-arrow" aria-hidden="true">↗</span></a><a class="nav-service-item" href="methodology.html#movement"><span class="nav-service-no">02</span><span><span class="nav-service-title">Four Movements</span><span class="nav-service-description">Ignite, Activate, Momentum, Acceleration.</span></span><span class="nav-service-arrow" aria-hidden="true">↗</span></a><a class="nav-service-item" href="methodology.html#experience"><span class="nav-service-no">03</span><span><span class="nav-service-title">Commercial Experience</span><span class="nav-service-description">Leadership judgment grounded in practice.</span></span><span class="nav-service-arrow" aria-hidden="true">↗</span></a><a class="nav-service-item" href="methodology.html#execution"><span class="nav-service-no">04</span><span><span class="nav-service-title">Modern Execution</span><span class="nav-service-description">A GTM foundation built to move.</span></span><span class="nav-service-arrow" aria-hidden="true">↗</span></a><a class="nav-service-all" href="methodology.html">Explore the full methodology <span aria-hidden="true">↗</span></a></div></div>
+<div class="nav-service-group"><a href="help.html">
      How we help
-    </a>
+    </a><button type="button" class="nav-service-toggle" aria-expanded="false" aria-controls="servicesDropdown" aria-label="Show How we help services"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button><div class="nav-service-panel" id="servicesDropdown" aria-label="How we help services" aria-hidden="true"><div class="nav-service-overline">G2M / HOW WE HELP YOU</div><a class="nav-service-item" href="help.html#commercial-acceleration"><span class="nav-service-no">01</span><span><span class="nav-service-title">Commercial Acceleration</span><span class="nav-service-description">Focus the market. Advance the right pursuits.</span></span><span class="nav-service-arrow" aria-hidden="true">↗</span></a><a class="nav-service-item" href="help.html#embedded-leadership"><span class="nav-service-no">02</span><span><span class="nav-service-title">Embedded Leadership</span><span class="nav-service-description">Senior experience, close to the work.</span></span><span class="nav-service-arrow" aria-hidden="true">↗</span></a><a class="nav-service-item" href="help.html#system-intelligence"><span class="nav-service-no">03</span><span><span class="nav-service-title">System & Intelligence</span><span class="nav-service-description">Connect signals, decisions and execution.</span></span><span class="nav-service-arrow" aria-hidden="true">↗</span></a><a class="nav-service-all" href="help.html">Explore all capabilities <span aria-hidden="true">↗</span></a></div></div>
 <a class="navcta" href="#contact">
      Start a conversation ↗
     </a>
@@ -59,12 +58,8 @@
 <a href="#pipeline">
      The problem
     </a>
-<a href="methodology.html">
-     Our methodology
-    </a>
-<a href="help.html">
-     How we help
-    </a>
+<details class="mobile-service-group mobile-method-group"><summary>Our methodology</summary><a href="methodology.html">Overview / Velocity™ ↗</a><a href="methodology.html#intelligence">Commercial Intelligence</a><a href="methodology.html#movement">Four Movements</a><a href="methodology.html#experience">Commercial Experience</a><a href="methodology.html#execution">Modern Execution</a></details>
+<details class="mobile-service-group"><summary>How we help</summary><a href="help.html">Overview / All services ↗</a><a href="help.html#commercial-acceleration">Commercial Acceleration</a><a href="help.html#embedded-leadership">Embedded Leadership</a><a href="help.html#system-intelligence">System & Intelligence</a></details>
 <a href="#contact">
      Start a conversation
     </a>
@@ -596,5 +591,6 @@
 <!-- END SECTION 07 -->
 <script defer="True" src="main.js">
 </script>
+<script src="nav-dropdown.js" defer></script>
 </body>
 </html>

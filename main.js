@@ -149,6 +149,14 @@ addEventListener('scroll',request,{passive:true});addEventListener('resize',requ
  function render(p){p=clamp(p);if(Math.abs(p-lastP)<.0004)return;lastP=p;
  const emerge=between(p,.18,.42), open=between(p,.48,.77),reveal=between(p,.62,.87);
  el('progress').style.width=(p*100)+'%';el('percent').textContent=String(Math.round(p*100)).padStart(3,'0')+'% / SCROLL';
+ // SIGNAL COLOR STORY / Yellow activity becomes red as friction warnings emerge.
+ // Scroll progress .17–.44 follows the rising warning cards; reversible.
+ const warningHeat=between(p,.17,.44);
+ const interpolate=(from,to,t)=>from.map((v,i)=>Math.round(v+(to[i]-v)*t));
+ const heatColor=(a,b)=>`rgb(${interpolate(a,b,warningHeat).join(',')})`;
+ story.style.setProperty('--pulse-color',heatColor([255,225,124],[232,71,62]));
+ story.style.setProperty('--pulse-glow',heatColor([255,220,75],[226,57,49]));
+ story.style.setProperty('--pulse-halo',`rgba(${interpolate([232,216,75],[213,47,42],warningHeat).join(',')},.55)`);
  const w=el('warnings').children;[...w].forEach((item,i)=>{const t=between(p,.17+i*.055,.29+i*.055);item.style.opacity=t;item.style.transform=`translateY(${(1-t)*55}px)`});
  el('pipeUpper').style.transform=`translateY(${-open*95}%)`;el('pipeLower').style.transform=`translateY(${open*95}%)`;
  const fade=1-between(p,.61,.82);el('pipeUpper').style.opacity=fade;el('pipeLower').style.opacity=fade;el('pipeInner').style.opacity=1-between(p,.52,.7);el('pipeStages').style.opacity=1-between(p,.50,.67);
