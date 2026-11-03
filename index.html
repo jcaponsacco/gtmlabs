@@ -6,15 +6,13 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <meta content="G2M Labs helps growth-stage organizations understand commercial constraints, target the right interventions, and improve repeatable growth." name="description"/>
-<title>
-   G2M Labs | Homepage Foundation 17
-  </title>
+<title>G2M Labs | Homepage — Foundation 19</title>
 <link href="styles.css" rel="stylesheet"/>
 <link rel="stylesheet" href="nav-dropdown.css">
 </head>
 <body class="home-page">
 <!-- ================================================================
-  G2M LABS — EDITABLE HOMEPAGE FOUNDATION 16 / OCTOBER 2026
+  G2M LABS — EDITABLE HOMEPAGE FOUNDATION 19 / NOVEMBER 2026
   EDIT MAP:
   SECTION 00 navigation / links
   SECTION 01 hero + signal strip + statement
@@ -22,10 +20,10 @@
   SECTION 03 calculator: copy above; assumptions in JS 'const models'
   SECTION 04 questionnaire: copy above; questions in JS 'const questions'
   SECTION 05 How We Help flip cards
-  SECTION 06 closing CTA; 06B newsletter; SECTION 07 footer
+  SECTION 06 closing CTA; SECTION 07 shared three-zone footer / newsletter
   COLOR TOKENS are in :root at top of CSS
   MOTION TIMING is in G2M_MOTION_CONFIG near bottom
-  IMPORTANT: methodology.html & how-we-help.html are NOT included yet.
+  PAGES: methodology.html and help.html are included in this project.
   Replace provisional email before publishing. HighLevel is NOT connected.
   Assumptions, questions and scenarios are illustrative, not client evidence.
   ================================================================ -->
@@ -522,75 +520,94 @@
 </div>
 </section>
 <!-- END SECTION 06 — CONTACT AND CONVERSION -->
-<!-- ============================================================================
- SECTION 06B — KEEP IN TOUCH / NEWSLETTER SIGN-UP
- EDIT: #keep-in-touch in index.html | styles.css FOUNDATION 13 | main.js FOUNDATION 12
- BACKEND STATUS: PREVIEW ONLY. Wire to consent-aware email service before launch.
-============================================================================ -->
-<section class="keep-in-touch editable-surface" id="keep-in-touch" aria-labelledby="keep-title">
-  <div class="wrap keep-layout">
-    <!-- 06B.1 / Full-width editorial heading -->
-    <div class="keep-copy">
-      <div class="keep-eyebrow">06B / G2M LABS / KEEP IN TOUCH</div>
-      <h2 id="keep-title">Good thinking. <span>Straight to your inbox.</span></h2>
-      <p>Subscribe for practical commercial growth insights, occasional alerts, and our monthly newsletter. No unnecessary noise.</p>
-    </div>
-    <!-- 06B.2 / Full-width form panel; all fields are real editable controls -->
-    <div class="keep-form-card">
-      <form id="keepSubscribeForm" class="keep-form" autocomplete="on">
-        <div class="keep-fields-row">
-          <label for="keepFirst">First name<input id="keepFirst" name="first_name" type="text" placeholder="First name" autocomplete="given-name" maxlength="100" required></label>
-          <label for="keepLast">Last name<input id="keepLast" name="last_name" type="text" placeholder="Last name" autocomplete="family-name" maxlength="100" required></label>
-          <label for="keepEmail">Email address<input id="keepEmail" name="email" type="email" placeholder="you@company.com" autocomplete="email" maxlength="254" required></label>
+<!-- SECTION 07 — FOOTER MOTION / 07A WORDMARK · 07B NAV · 07C LEGAL · 07D END CAP -->
+<!-- SECTION 07 — G2M FOUNDATION 19 FOOTER / THREE-ZONE DESIGN -->
+<footer aria-label="G2M Labs footer" class="footer-stage footer-foundation-19" id="g2mFooter" style="--footer-sage:#264a3a;--footer-sage-text:#f3f8f3">
+  <!-- 07A / Oversized animated wordmark — original Foundation 18 movement retained -->
+  <div class="footer-wordmark-stage" id="wordmarkStage">
+    <div aria-label="G2M Labs" class="footer-wordmark" id="footerWordmark">G2M LABS</div>
+  </div>
+
+  <!-- 07B / Architectural three-zone footer -->
+  <div class="footer-main" id="footerMain">
+    <div class="footer-main-inner footer-enter">
+      <!-- ZONE 01 / Identity and channels -->
+      <div class="footer-identity-zone">
+        <div class="footer-identity-top">
+          <div class="footer-brand-lockup" aria-label="G2M Labs"><div class="footer-brand-mark">G2M</div><span>LABS / COMMERCIAL PERFORMANCE</span></div>
+          <p class="footer-identity-statement">Commercial clarity.<br>Disciplined execution.<br>Measurable outcomes.</p>
         </div>
-        <div class="keep-actions-row">
-          <label class="keep-consent" for="keepConsent"><input type="checkbox" id="keepConsent" name="marketing_consent" required><span>I'd like to receive G2M Labs growth insights, alerts, and the monthly newsletter. I can unsubscribe anytime.</span></label>
-          <button class="keep-submit" type="submit">Join the list <span aria-hidden="true">↗</span></button>
+        <div class="footer-social-bar" aria-label="Follow G2M Labs">
+          <!-- Replace temporary platform-homepage URLs with official G2M Labs profiles before launch. -->
+          <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn — G2M profile URL pending" title="LinkedIn (profile URL to be added)">
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M5.2 8.8H1.9V22h3.3V8.8ZM3.55 2A1.92 1.92 0 1 0 3.6 5.84 1.92 1.92 0 0 0 3.55 2ZM22 14c0-3.5-1.9-5.2-4.44-5.2a3.83 3.83 0 0 0-3.45 1.9V8.8h-3.3V22h3.3v-7.34c0-1.93.36-3.8 2.76-3.8 2.35 0 2.38 2.17 2.38 3.93V22H22V14Z"/></svg>
+            <span>LinkedIn</span>
+          </a>
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram — G2M profile URL pending" title="Instagram (profile URL to be added)">
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2.2" y="2.2" width="19.6" height="19.6" rx="5.5"/><circle cx="12" cy="12" r="4.4"/><circle cx="17.7" cy="6.7" r="1" fill="currentColor" stroke="none"/></svg>
+            <span>Instagram</span>
+          </a>
         </div>
-        <p class="keep-form-status" id="keepFormStatus" role="status" aria-live="polite">Preview form — subscriptions are not connected yet; no information is transmitted or stored.</p>
-        <p class="keep-privacy">Before launch, connect the mailing service and publish a <a href="privacy.html">privacy policy</a>.</p>
-      </form>
+      </div>
+
+      <!-- ZONE 02 / Site directory -->
+      <div class="footer-directory-zone">
+        <div class="footer-directory-grid">
+          <nav aria-label="Explore" class="footer-column">
+            <h2>Explore</h2>
+            <a href="index.html">Home</a>
+            <a href="methodology.html">Our Methodology</a>
+            <a href="help.html">How We Help</a>
+            <a href="index.html#growth-pulse">Growth Pulse</a>
+          </nav>
+          <nav aria-label="Company" class="footer-column">
+            <h2>G2M Labs</h2>
+            <a href="about.html">About</a>
+            <a href="insights.html">Insights</a>
+            <a href="index.html#contact">Contact</a>
+          </nav>
+          <div class="footer-column footer-contact-column">
+            <h2>Contact</h2>
+            <p class="footer-contact-intro">Let's talk about growth.</p>
+            <a href="mailto:hello@g2mlabs.com?subject=G2M%20Labs%20conversation" title="Provisional email — verify before launch">Email us ↗</a>
+            <span class="footer-contact-note">The right conversation starts with a better question.</span>
+          </div>
+        </div>
+        <div class="footer-directory-baseline"><span>G2M / COMMERCIAL TRANSFORMATION</span><span>DIAGNOSE → PRIORITIZE → EXECUTE</span></div>
+      </div>
+
+      <!-- ZONE 03 / Editorial subscription as the footer's primary call to action -->
+      <aside class="footer-subscribe-zone" aria-labelledby="footerSubscribeTitle">
+        <div class="footer-subscribe-eyebrow"><span class="footer-subscribe-dot"></span> G2M LABS / INSIGHTS</div>
+        <h2 id="footerSubscribeTitle">Better questions.<br><em>Sharper decisions.</em></h2>
+        <p>Practical commercial perspectives on growth, leadership, and the signals worth paying attention to. Delivered occasionally.</p>
+        <form id="footerSubscribeForm" class="footer-subscribe-form" autocomplete="on">
+          <div class="footer-subscribe-controls">
+            <label class="visually-hidden" for="footerEmail">Email address</label>
+            <input type="email" name="email" id="footerEmail" autocomplete="email" placeholder="Your email address" maxlength="254" required>
+            <button type="submit">Subscribe <span aria-hidden="true">↗</span></button>
+          </div>
+          <label class="footer-subscribe-consent"><input type="checkbox" name="marketing_consent" required><span>Yes, send me G2M Labs insights. I can unsubscribe anytime.</span></label>
+          <p class="footer-subscribe-status" id="footerSubscribeStatus" role="status" aria-live="polite">Preview only — signup is not connected yet.</p>
+        </form>
+        <div class="footer-subscribe-footnote">NO NOISE. JUST PERSPECTIVE.</div>
+      </aside>
     </div>
   </div>
-</section>
-<!-- END SECTION 06B — KEEP IN TOUCH -->
-<!-- SECTION 07 — FOOTER MOTION / 07A WORDMARK · 07B NAV · 07C LEGAL · 07D END CAP -->
-<footer aria-label="G2M Labs footer" class="footer-stage" id="g2mFooter" style="--footer-sage:#264a3a;--footer-sage-text:#f3f8f3">
-<!-- 07A. Giant wordmark: genuine editable text, intentionally clipped by the black panel -->
-<div class="footer-wordmark-stage" id="wordmarkStage">
-<div aria-label="G2M Labs" class="footer-wordmark" id="footerWordmark">G2M LABS</div>
-</div>
-<!-- 07B. Main footer. Editable graphic/logo surface and navigation columns. -->
-<div class="footer-main" id="footerMain">
-<div class="footer-main-inner footer-enter">
-<div class="logo-space">
-<div aria-label="Placeholder for the G2M Labs logo" class="brand-tile" role="img"><strong>G2M</strong></div>
-<p class="brand-note">Commercial clarity.<br/>Disciplined execution.<br/>Measurable outcomes.</p>
-</div>
-<nav aria-label="Explore" class="footer-column">
-<h2>Explore</h2>
-<a href="#home">Home</a><a href="help.html">How We Help</a><a href="#growth-pulse">Growth Pulse</a>
-</nav>
-<nav aria-label="Company" class="footer-column">
-<h2>G2M Labs</h2>
-<a href="methodology.html">Our Approach</a><a href="about.html">About</a><a href="insights.html">Insights</a>
-</nav>
-<div class="footer-column">
-<h2>Contact</h2>
-<span class="muted">Let's talk about growth.</span>
-<a href="mailto:hello@g2mlabs.com?subject=G2M%20Labs%20conversation" title="Provisional contact email — verify before publishing">Email us ↗</a>
-<span class="muted">Location and phone details to be confirmed.</span>
-</div>
-</div>
-</div>
-<!-- 07C. Standalone legal band; --footer-sage token or dropdown controls its color -->
-<div aria-label="Legal and credits links" class="footer-legal"><span>© <span id="year"></span> G2M Labs</span><span aria-hidden="true" class="sep"></span><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="credits.html">Credits</a></div>
-<!-- 07D. Small closing field -->
-<div class="footer-bottom"><div class="footer-bottom-inner"><span>G2M LABS / COMMERCIAL TRANSFORMATION</span><span>DIAGNOSE <b>→</b> PRIORITIZE <b>→</b> EXECUTE <b>→</b> MEASURE</span></div></div>
+
+  <!-- 07C / Legal ribbon -->
+  <div aria-label="Legal and credits links" class="footer-legal">
+    <span>© <span id="year"></span> G2M Labs</span><span aria-hidden="true" class="sep"></span>
+    <a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="credits.html">Credits</a>
+  </div>
+  <!-- 07D / Original closing field -->
+  <div class="footer-bottom"><div class="footer-bottom-inner"><span>G2M LABS / COMMERCIAL TRANSFORMATION</span><span>DIAGNOSE <b>→</b> PRIORITIZE <b>→</b> EXECUTE <b>→</b> MEASURE</span></div></div>
 </footer>
+<!-- END SECTION 07 / FOUNDATION 19 FOOTER -->
 <!-- END SECTION 07 -->
 <script defer="True" src="main.js">
 </script>
 <script src="nav-dropdown.js" defer></script>
+<script src="footer-signup.js" defer></script>
 </body>
 </html>
