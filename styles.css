@@ -2148,3 +2148,59 @@ button:disabled {
   .reframe-scroll-stage #reframe {position:relative;height:auto;min-height:70svh;}
   #reframe .reframe-maybe {opacity:1!important;transform:none!important;will-change:auto;}
 }
+
+
+/* ========================================================================
+   FOUNDATION 23 / SECTION 03 — BLUE BUSINESS INTELLIGENCE TREATMENT
+   Adapted from the earlier Business Intelligence Study 01.
+   Scoped to investment calculator; Growth Pulse section remains unchanged.
+   Editable color levers: --bi-blue, --bi-navy, --bi-border, --bi-surface.
+   ======================================================================== */
+:root { --bi-blue:#3976AA; --bi-navy:#173B56; --bi-border:#C9DAE8; --bi-muted:#58778D; --bi-surface:#EDF3F8; }
+#investment { color:var(--bi-navy); position:relative; isolation:isolate; }
+#investment { background:#EDF3F8; border-top:1px solid #D4E0E9; border-bottom:1px solid #D4E0E9; }
+#investment::before { content:""; position:absolute; inset:0; z-index:-1; pointer-events:none; background-image:linear-gradient(to right,rgba(57,118,170,.065) 1px,transparent 1px),linear-gradient(to bottom,rgba(57,118,170,.055) 1px,transparent 1px); background-size:80px 80px; mask-image:linear-gradient(180deg,transparent,black 14%,black 85%,transparent); }
+#investment .eyebrow { color:var(--bi-blue); font-weight:800; letter-spacing:.13em; }
+#investment h2 { color:var(--bi-navy); max-width:900px; }
+#investment .investment-intro { color:#526D80; }
+#investment .invest-story { grid-template-columns:260px minmax(0,1fr); gap:15px; margin-top:40px; }
+#investment .invest-choice { background:#F9FCFE; border:1px solid var(--bi-border); border-radius:5px; padding:20px; gap:9px; transition:background .2s,border-color .2s,box-shadow .2s,transform .2s; }
+#investment .invest-choice:hover { border-color:#73A2C5; transform:translateX(3px); }
+#investment .invest-choice.active { background:#DDEAF5; border-color:#3976AA; box-shadow:inset 4px 0 #3976AA,0 6px 22px rgba(23,59,86,.08); }
+#investment .invest-choice span { color:var(--bi-blue); font-family:ui-monospace,SFMono-Regular,Consolas,monospace; letter-spacing:.12em; }
+#investment .invest-choice strong { color:var(--bi-navy); }
+#investment .invest-choice small { color:#59768A; }
+#investment .invest-panel { background:#fff; border:1px solid var(--bi-border); border-radius:6px; box-shadow:0 16px 45px rgba(24,65,93,.06); }
+#investment .invest-panel { padding:32px clamp(23px,3vw,45px); }
+#investment .invest-panel h3 { color:var(--bi-navy); }
+#investment .invest-panel p { color:var(--bi-muted); }
+#investment .invest-panel-head small, #investment .investment-result small, #investment .combined-investment small { color:var(--bi-blue); font-family:ui-monospace,SFMono-Regular,Consolas,monospace; letter-spacing:.095em; }
+#investment .model-pill { color:#446C8A; border-color:#C5DAE9; background:#F0F6FA; white-space:nowrap; }
+#investment .investment-inputs label { color:#375970; }
+#investment .investment-inputs label strong { color:#173B56; font-variant-numeric:tabular-nums; }
+#investment .investment-inputs input { accent-color:#3976AA; cursor:pointer; }
+#investment .investment-result { border-color:#D6E3EC; }
+#investment .investment-result strong { color:#173B56; font-variant-numeric:tabular-nums; font-feature-settings:"tnum"; font-weight:750; }
+#investment .result-breakdown { color:#52738B; }
+#investment .combined-investment { background:linear-gradient(115deg,#173B56,#214D70); border:1px solid #2D5A7B; border-radius:6px; box-shadow:0 12px 36px rgba(23,59,86,.12); }
+#investment .combined-investment strong { color:#fff; font-variant-numeric:tabular-nums; }
+#investment .combined-investment small { color:#B9DDF5; }
+#investment .combined-investment p, #investment .combined-split { color:#D5E5F0; }
+#investment .investment-question { border-top:1px solid #C5D8E7; padding-top:29px; margin-top:34px; }
+#investment .investment-question span { color:#A06439; }
+#investment .investment-question h3 { color:#173B56; }
+#investment .investment-question p { color:#567184; }
+.assumption-note { color:#637D8D; }
+#investment :is(button,input):focus-visible {outline:3px solid #3976AA;outline-offset:3px;}
+@media(max-width:760px){
+ #investment .invest-story{grid-template-columns:1fr;}
+ #investment .invest-choices{grid-template-columns:repeat(2,minmax(0,1fr));}
+ #investment .invest-choice{padding:15px;}
+ #investment .invest-panel-head,#investment .investment-result{flex-wrap:wrap;}
+ #investment .result-breakdown{text-align:left;}
+}
+@media(max-width:440px){
+ #investment .invest-choices{grid-template-columns:1fr;}
+ #investment .combined-investment{flex-direction:column;}
+}
+@media(prefers-reduced-motion:reduce){#investment .invest-choice{transition:none;transform:none;}}
