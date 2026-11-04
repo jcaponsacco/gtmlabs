@@ -6,23 +6,25 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <meta content="G2M Labs helps growth-stage organizations understand commercial constraints, target the right interventions, and improve repeatable growth." name="description"/>
-<title>G2M Labs | Homepage — Foundation 19</title>
+<title>G2M Labs | Homepage — Foundation 21</title>
 <link href="styles.css" rel="stylesheet"/>
-<link rel="stylesheet" href="nav-dropdown.css">
+<link href="nav-dropdown.css" rel="stylesheet"/>
+<link href="offering-cards.css" rel="stylesheet"/>
 </head>
 <body class="home-page">
-<!-- ================================================================
-  G2M LABS — EDITABLE HOMEPAGE FOUNDATION 19 / NOVEMBER 2026
+<!--
+ ================================================================
+  G2M LABS — EDITABLE HOMEPAGE FOUNDATION 21 / NOVEMBER 2026
   EDIT MAP:
   SECTION 00 navigation / links
   SECTION 01 hero + signal strip + statement
   SECTION 02 opening pipeline + guided investigation
   SECTION 03 calculator: copy above; assumptions in JS 'const models'
   SECTION 04 questionnaire: copy above; questions in JS 'const questions'
-  SECTION 05 How We Help flip cards
+  SECTION 05 Three Ways to Engage cards
   SECTION 06 closing CTA; SECTION 07 shared three-zone footer / newsletter
   COLOR TOKENS are in :root at top of CSS
-  MOTION TIMING is in G2M_MOTION_CONFIG near bottom
+  MOTION TIMING is controlled in main.js
   PAGES: methodology.html and help.html are included in this project.
   Replace provisional email before publishing. HighLevel is NOT connected.
   Assumptions, questions and scenarios are illustrative, not client evidence.
@@ -41,10 +43,10 @@
 <a href="#pipeline">
      The problem
     </a>
-<div class="nav-service-group nav-method-group"><a href="methodology.html" data-nav-method-link>Our methodology</a><button type="button" class="nav-service-toggle" aria-expanded="false" aria-controls="methodologyDropdown" aria-label="Show methodology sections"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button><div class="nav-service-panel" id="methodologyDropdown" aria-label="Methodology sections" aria-hidden="true"><div class="nav-service-overline">G2M / VELOCITY™ METHODOLOGY</div><a class="nav-service-item" href="methodology.html#intelligence"><span class="nav-service-no">01</span><span><span class="nav-service-title">Commercial Intelligence</span><span class="nav-service-description">Connect the signals. Find the next move.</span></span><span class="nav-service-arrow" aria-hidden="true">↗</span></a><a class="nav-service-item" href="methodology.html#movement"><span class="nav-service-no">02</span><span><span class="nav-service-title">Four Movements</span><span class="nav-service-description">Ignite, Activate, Momentum, Acceleration.</span></span><span class="nav-service-arrow" aria-hidden="true">↗</span></a><a class="nav-service-item" href="methodology.html#experience"><span class="nav-service-no">03</span><span><span class="nav-service-title">Commercial Experience</span><span class="nav-service-description">Leadership judgment grounded in practice.</span></span><span class="nav-service-arrow" aria-hidden="true">↗</span></a><a class="nav-service-item" href="methodology.html#execution"><span class="nav-service-no">04</span><span><span class="nav-service-title">Modern Execution</span><span class="nav-service-description">A GTM foundation built to move.</span></span><span class="nav-service-arrow" aria-hidden="true">↗</span></a><a class="nav-service-all" href="methodology.html">Explore the full methodology <span aria-hidden="true">↗</span></a></div></div>
+<div class="nav-service-group nav-method-group"><a data-nav-method-link="" href="methodology.html">Our methodology</a><button aria-controls="methodologyDropdown" aria-expanded="false" aria-label="Show methodology sections" class="nav-service-toggle" type="button"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24"><path d="m6 9 6 6 6-6"></path></svg></button><div aria-hidden="true" aria-label="Methodology sections" class="nav-service-panel" id="methodologyDropdown"><div class="nav-service-overline">G2M / VELOCITY™ METHODOLOGY</div><a class="nav-service-item" href="methodology.html#velocity"><span class="nav-service-no">01</span><span><span class="nav-service-title">Velocity™ Decision Method</span><span class="nav-service-description">Decisions that are visible and traceable.</span></span><span aria-hidden="true" class="nav-service-arrow">↗</span></a><a class="nav-service-item" href="methodology.html#offerings-stack"><span class="nav-service-no">02</span><span><span class="nav-service-title">Three Ways to Engage</span><span class="nav-service-description">Leadership, GTM systems, or both.</span></span><span aria-hidden="true" class="nav-service-arrow">↗</span></a><a class="nav-service-item" href="methodology.html#gtm-operating-system"><span class="nav-service-no">03</span><span><span class="nav-service-title">GTM Operating System</span><span class="nav-service-description">A foundation you can configure and run.</span></span><span aria-hidden="true" class="nav-service-arrow">↗</span></a><a class="nav-service-item" href="methodology.html#progress"><span class="nav-service-no">04</span><span><span class="nav-service-title">Early Action &amp; Checkpoints</span><span class="nav-service-description">Start early. Review and adapt.</span></span><span aria-hidden="true" class="nav-service-arrow">↗</span></a><a class="nav-service-all" href="methodology.html">Explore the full methodology <span aria-hidden="true">↗</span></a></div></div>
 <div class="nav-service-group"><a href="help.html">
      How we help
-    </a><button type="button" class="nav-service-toggle" aria-expanded="false" aria-controls="servicesDropdown" aria-label="Show How we help services"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button><div class="nav-service-panel" id="servicesDropdown" aria-label="How we help services" aria-hidden="true"><div class="nav-service-overline">G2M / HOW WE HELP YOU</div><a class="nav-service-item" href="help.html#commercial-acceleration"><span class="nav-service-no">01</span><span><span class="nav-service-title">Commercial Acceleration</span><span class="nav-service-description">Focus the market. Advance the right pursuits.</span></span><span class="nav-service-arrow" aria-hidden="true">↗</span></a><a class="nav-service-item" href="help.html#embedded-leadership"><span class="nav-service-no">02</span><span><span class="nav-service-title">Embedded Leadership</span><span class="nav-service-description">Senior experience, close to the work.</span></span><span class="nav-service-arrow" aria-hidden="true">↗</span></a><a class="nav-service-item" href="help.html#system-intelligence"><span class="nav-service-no">03</span><span><span class="nav-service-title">System & Intelligence</span><span class="nav-service-description">Connect signals, decisions and execution.</span></span><span class="nav-service-arrow" aria-hidden="true">↗</span></a><a class="nav-service-all" href="help.html">Explore all capabilities <span aria-hidden="true">↗</span></a></div></div>
+    </a><button aria-controls="servicesDropdown" aria-expanded="false" aria-label="Show How we help services" class="nav-service-toggle" type="button"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24"><path d="m6 9 6 6 6-6"></path></svg></button><div aria-hidden="true" aria-label="How we help services" class="nav-service-panel" id="servicesDropdown"><div class="nav-service-overline">G2M / HOW WE HELP YOU</div><a class="nav-service-item" href="help.html#commercial-acceleration"><span class="nav-service-no">01</span><span><span class="nav-service-title">Commercial Acceleration</span><span class="nav-service-description">Focus the market. Advance the right pursuits.</span></span><span aria-hidden="true" class="nav-service-arrow">↗</span></a><a class="nav-service-item" href="help.html#embedded-leadership"><span class="nav-service-no">02</span><span><span class="nav-service-title">Embedded Leadership</span><span class="nav-service-description">Senior experience, close to the work.</span></span><span aria-hidden="true" class="nav-service-arrow">↗</span></a><a class="nav-service-item" href="help.html#system-intelligence"><span class="nav-service-no">03</span><span><span class="nav-service-title">System &amp; Intelligence</span><span class="nav-service-description">Connect signals, decisions and execution.</span></span><span aria-hidden="true" class="nav-service-arrow">↗</span></a><a class="nav-service-all" href="help.html">Explore all capabilities <span aria-hidden="true">↗</span></a></div></div>
 <a class="navcta" href="#contact">
      Start a conversation ↗
     </a>
@@ -56,8 +58,8 @@
 <a href="#pipeline">
      The problem
     </a>
-<details class="mobile-service-group mobile-method-group"><summary>Our methodology</summary><a href="methodology.html">Overview / Velocity™ ↗</a><a href="methodology.html#intelligence">Commercial Intelligence</a><a href="methodology.html#movement">Four Movements</a><a href="methodology.html#experience">Commercial Experience</a><a href="methodology.html#execution">Modern Execution</a></details>
-<details class="mobile-service-group"><summary>How we help</summary><a href="help.html">Overview / All services ↗</a><a href="help.html#commercial-acceleration">Commercial Acceleration</a><a href="help.html#embedded-leadership">Embedded Leadership</a><a href="help.html#system-intelligence">System & Intelligence</a></details>
+<details class="mobile-service-group mobile-method-group"><summary>Our methodology</summary><a href="methodology.html">Overview / Velocity™ ↗</a><a href="methodology.html#velocity">Velocity™ Decision Method</a><a href="methodology.html#offerings-stack">Three Ways to Engage</a><a href="methodology.html#gtm-operating-system">GTM Operating System</a><a href="methodology.html#progress">Early Action &amp; Checkpoints</a></details>
+<details class="mobile-service-group"><summary>How we help</summary><a href="help.html">Overview / All services ↗</a><a href="help.html#commercial-acceleration">Commercial Acceleration</a><a href="help.html#embedded-leadership">Embedded Leadership</a><a href="help.html#system-intelligence">System &amp; Intelligence</a></details>
 <a href="#contact">
      Start a conversation
     </a>
@@ -104,15 +106,15 @@
 <div class="hero-frame" id="heroFrame">
 <div class="hero-panel">
 <div aria-hidden="true" class="hero-signal-overlay">
-<svg class="hero-signal-svg" preserveAspectRatio="none" viewBox="0 0 1672 941">
+<svg class="hero-signal-svg" preserveaspectratio="none" viewbox="0 0 1672 941">
 <defs>
-<filter id="heroSoftGlow" height="200%" width="200%" x="-50%" y="-50%">
-<feGaussianBlur result="blur1" stdDeviation="8"></feGaussianBlur>
-<feMerge><feMergeNode in="blur1"></feMergeNode><feMergeNode in="SourceGraphic"></feMergeNode></feMerge>
+<filter height="200%" id="heroSoftGlow" width="200%" x="-50%" y="-50%">
+<fegaussianblur result="blur1" stddeviation="8"></fegaussianblur>
+<femerge><femergenode in="blur1"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge>
 </filter>
-<filter id="heroTinyGlow" height="200%" width="200%" x="-50%" y="-50%">
-<feGaussianBlur result="blur" stdDeviation="3"></feGaussianBlur>
-<feMerge><feMergeNode in="blur"></feMergeNode><feMergeNode in="SourceGraphic"></feMergeNode></feMerge>
+<filter height="200%" id="heroTinyGlow" width="200%" x="-50%" y="-50%">
+<fegaussianblur result="blur" stddeviation="3"></fegaussianblur>
+<femerge><femergenode in="blur"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge>
 </filter>
 </defs>
 <path class="hero-signal-line gold" d="M 115 643 C 245 622, 410 610, 565 632 C 705 652, 820 692, 915 685 C 1068 674, 1160 562, 1294 518 C 1448 466, 1547 525, 1640 465" id="heroPath1"></path>
@@ -226,6 +228,7 @@
  or set --reframe-image in CSS to supply your own background artwork.
  This module is independent of the pipeline and calculator controllers.
  ============================================================ -->
+<div class="reframe-scroll-stage" id="reframeScrollStage">
 <section aria-labelledby="reframeTitle" class="reframe-section" id="reframe">
 <div aria-hidden="true" class="reframe-art">
 <div class="reframe-circle outer"></div>
@@ -234,10 +237,11 @@
 </div>
 <div class="wrap reframe-content">
 <p class="reframe-eyebrow">02 / REFRAME THE QUESTION</p>
-<h2 id="reframeTitle">“We need more…” <em>“Maybe.”</em></h2>
+<h2 id="reframeTitle"><span class="reframe-question">“We need more…”</span> <em class="reframe-maybe">“Maybe.”</em></h2>
 <p class="reframe-description">More sellers. More SDRs. More GTM systems. More of your time. Each adds investment or complexity. None guarantees the result.</p>
 </div>
 </section>
+</div>
 <!-- END SECTION 02B — REFRAME THE QUESTION -->
 <!-- ============================================================ SECTION 03 / CALCULATOR — CHRIS MODEL ============================================================ -->
 <!--
@@ -485,7 +489,40 @@
  EDIT: section #services | styles.css SECTION 05
 ============================================================================
 -->
-<section class="services-section editable-surface" id="services"><div class="wrap"><div class="eyebrow">05 / How we help</div><h2 class="">Experienced operators. Embedded execution. Intelligent systems.</h2><p class="intro">G2M can work across targeting, messaging, sales execution, leadership, processes and GTM technology. Velocity™ is how we determine what matters most, sequence the work, execute the right interventions and measure progress against near-term priorities and long-term growth goals.</p><div class="offers"><article aria-expanded="false" aria-label="01 / COMMERCIAL ACCELERATION: click to flip; click again to return" class="velocity-flip-card" role="button" tabindex="0"><div class="velocity-flip-inner"><div class="velocity-face velocity-front"><div class="velocity-face-top"><small>01 / COMMERCIAL ACCELERATION</small><span aria-hidden="true" class="velocity-card-icon">↗</span></div><div aria-hidden="true" class="velocity-front-graphic velocity-graphic-01"><span></span><span></span><span></span><span></span></div><div class="velocity-face-bottom"><h3>Prioritize the moves that unlock growth.</h3><p>Improve targeting, messaging, account development, pipeline conversion and pursuit execution—where the evidence suggests the greatest near-term impact.</p><span class="velocity-card-cue">CLICK TO EXPLORE  ↗</span></div></div><div class="velocity-face velocity-back"><div class="velocity-face-top"><small>VELOCITY™ / 01 / COMMERCIAL ACCELERATION</small><span aria-hidden="true">↶</span></div><div class="velocity-back-center"><span class="velocity-back-kicker">TARGET · ENGAGE · CONVERT</span><h3>From scattered activity to focused momentum.</h3><p>Identify the commercial constraint, strengthen the work around it and accelerate real opportunities.</p><div class="velocity-method"><span>FOCUS</span><i></i><span>ACTIVATE</span><i></i><span>MEASURE</span></div><a class="velocity-deep-link" href="help.html#commercial-acceleration">Explore how we help ↗</a></div><span class="velocity-card-cue">CLICK TO TURN BACK  ↶</span></div></div></article><article aria-expanded="false" aria-label="02 / EMBEDDED LEADERSHIP: click to flip; click again to return" class="velocity-flip-card" role="button" tabindex="0"><div class="velocity-flip-inner"><div class="velocity-face velocity-front"><div class="velocity-face-top"><small>02 / EMBEDDED LEADERSHIP</small><span aria-hidden="true" class="velocity-card-icon">◎</span></div><div aria-hidden="true" class="velocity-front-graphic velocity-graphic-02"><span></span><span></span><span></span><span></span></div><div class="velocity-face-bottom"><h3>Put senior experience close to execution.</h3><p>Provide experienced leadership, clear ownership, operating cadence and hands-on support to move opportunities and build lasting capability.</p><span class="velocity-card-cue">CLICK TO EXPLORE  ↗</span></div></div><div class="velocity-face velocity-back"><div class="velocity-face-top"><small>VELOCITY™ / 02 / EMBEDDED LEADERSHIP</small><span aria-hidden="true">↶</span></div><div class="velocity-back-center"><span class="velocity-back-kicker">LEAD · OWN · EXECUTE</span><h3>Experienced operators. Real accountability.</h3><p>Put leadership into the work, establish ownership and build a repeatable operating rhythm.</p><div class="velocity-method"><span>FOCUS</span><i></i><span>ACTIVATE</span><i></i><span>MEASURE</span></div><a class="velocity-deep-link" href="help.html#embedded-leadership">Explore how we help ↗</a></div><span class="velocity-card-cue">CLICK TO TURN BACK  ↶</span></div></div></article><article aria-expanded="false" aria-label="03 / SYSTEM &amp; INTELLIGENCE: click to flip; click again to return" class="velocity-flip-card" role="button" tabindex="0"><div class="velocity-flip-inner"><div class="velocity-face velocity-front"><div class="velocity-face-top"><small>03 / SYSTEM &amp; INTELLIGENCE</small><span aria-hidden="true" class="velocity-card-icon">⌘</span></div><div aria-hidden="true" class="velocity-front-graphic velocity-graphic-03"><span></span><span></span><span></span><span></span></div><div class="velocity-face-bottom"><h3>Make the commercial environment work together.</h3><p>Align people, workflows, CRM, data and GTM tools around the work that matters—without adding technology for its own sake.</p><span class="velocity-card-cue">CLICK TO EXPLORE  ↗</span></div></div><div class="velocity-face velocity-back"><div class="velocity-face-top"><small>VELOCITY™ / 03 / SYSTEM &amp; INTELLIGENCE</small><span aria-hidden="true">↶</span></div><div class="velocity-back-center"><span class="velocity-back-kicker">CONNECT · INFORM · IMPROVE</span><h3>Connected systems. Better decisions.</h3><p>Make tools, data and workflows useful to the people responsible for growth.</p><div class="velocity-method"><span>FOCUS</span><i></i><span>ACTIVATE</span><i></i><span>MEASURE</span></div><a class="velocity-deep-link" href="help.html#system-intelligence">Explore how we help ↗</a></div><span class="velocity-card-cue">CLICK TO TURN BACK  ↶</span></div></div></article></div></div></section>
+<section aria-labelledby="dealSectionTitle" class="services-section editable-surface g2m-deal-section" id="services">
+<div class="wrap">
+<div class="eyebrow">05 / THREE WAYS TO ENGAGE</div>
+<h2 id="dealSectionTitle">The right kind of help. <em>For the work ahead.</em></h2>
+<p class="intro">You may need experienced commercial leadership, a connected GTM operating foundation, or both. Choose the starting point that fits your business. Each approach is guided by Velocity™.</p>
+<div aria-label="Explore G2M engagement approaches" class="g2m-deal-grid">
+<a class="g2m-deal-card" href="methodology.html#commercial-leadership" style="--deal-color:#43836A;--deal-soft:#E8F1E9;--deal-index:0">
+<div class="g2m-deal-top"><span>01 / COMMERCIAL LEADERSHIP</span><span aria-hidden="true">↗</span></div>
+<div aria-hidden="true" class="g2m-deal-illustration"><div class="g2m-deal-orbit"><span></span><span></span></div><i class="g2m-deal-axis"></i></div>
+<h3>Commercial Leadership <span>&amp; Execution</span></h3>
+<p>Experienced judgment and hands-on leadership to focus the work, advance opportunities, and strengthen your team.</p>
+<span class="g2m-deal-fit">WHEN YOU NEED / Direction + execution</span>
+<span class="g2m-deal-action">Explore this approach <span aria-hidden="true">↗</span></span>
+</a>
+<a class="g2m-deal-card" href="methodology.html#gtm-operating-system" style="--deal-color:#3976AA;--deal-soft:#E8F1F8;--deal-index:1">
+<div class="g2m-deal-top"><span>02 / GTM SYSTEM + ADVISORY</span><span aria-hidden="true">↗</span></div>
+<div aria-hidden="true" class="g2m-deal-illustration g2m-deal-network"><div class="g2m-deal-orbit"><span></span><span></span></div><i class="g2m-deal-axis"></i></div>
+<h3>AI-Enabled GTM <span>Operating System</span></h3>
+<p>A pre-engineered, configurable commercial foundation for CRM, workflows, automation, reporting, and guided improvement.</p>
+<span class="g2m-deal-fit">WHEN YOU NEED / Connected infrastructure</span>
+<span class="g2m-deal-action">Explore this approach <span aria-hidden="true">↗</span></span>
+</a>
+<a class="g2m-deal-card" href="methodology.html#integrated-partnership" style="--deal-color:#7861A5;--deal-soft:#F0EAF7;--deal-index:2">
+<div class="g2m-deal-top"><span>03 / INTEGRATED PARTNERSHIP</span><span aria-hidden="true">↗</span></div>
+<div aria-hidden="true" class="g2m-deal-illustration g2m-deal-integrated"><div class="g2m-deal-orbit"><span></span><span></span></div><i class="g2m-deal-axis"></i></div>
+<h3>Integrated Growth <span>Partnership</span></h3>
+<p>Commercial leadership, operating technology, and execution coordinated around shared growth priorities.</p>
+<span class="g2m-deal-fit">WHEN YOU NEED / One coordinated approach</span>
+<span class="g2m-deal-action">Explore this approach <span aria-hidden="true">↗</span></span>
+</a>
+</div>
+<p class="g2m-deal-note">Independent starting points—not packages or mandatory upgrades. The G2M operating system is not required for commercial leadership.</p>
+</div>
+</section>
 <!-- END SECTION 05 — ENGAGEMENT / SERVICE CARDS -->
 <!-- SECTION 06 / CLOSING CTA — connect URL is a placeholder anchor; wire to HighLevel later. -->
 <!--
@@ -521,93 +558,89 @@
 </section>
 <!-- END SECTION 06 — CONTACT AND CONVERSION -->
 <!-- SECTION 07 — FOOTER MOTION / 07A WORDMARK · 07B NAV · 07C LEGAL · 07D END CAP -->
-<!-- SECTION 07 — G2M FOUNDATION 19 FOOTER / THREE-ZONE DESIGN -->
+<!-- SECTION 07 — G2M FOUNDATION 20 FOOTER / THREE-ZONE DESIGN -->
 <footer aria-label="G2M Labs footer" class="footer-stage footer-foundation-19" id="g2mFooter" style="--footer-sage:#264a3a;--footer-sage-text:#f3f8f3">
-  <!-- 07A / Oversized animated wordmark — original Foundation 18 movement retained -->
-  <div class="footer-wordmark-stage" id="wordmarkStage">
-    <div aria-label="G2M Labs" class="footer-wordmark" id="footerWordmark">G2M LABS</div>
-  </div>
-
-  <!-- 07B / Architectural three-zone footer -->
-  <div class="footer-main" id="footerMain">
-    <div class="footer-main-inner footer-enter">
-      <!-- ZONE 01 / Identity and channels -->
-      <div class="footer-identity-zone">
-        <div class="footer-identity-top">
-          <div class="footer-brand-lockup" aria-label="G2M Labs"><div class="footer-brand-mark">G2M</div><span>LABS / COMMERCIAL PERFORMANCE</span></div>
-          <p class="footer-identity-statement">Commercial clarity.<br>Disciplined execution.<br>Measurable outcomes.</p>
-        </div>
-        <div class="footer-social-bar" aria-label="Follow G2M Labs">
-          <!-- Replace temporary platform-homepage URLs with official G2M Labs profiles before launch. -->
-          <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn — G2M profile URL pending" title="LinkedIn (profile URL to be added)">
-            <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M5.2 8.8H1.9V22h3.3V8.8ZM3.55 2A1.92 1.92 0 1 0 3.6 5.84 1.92 1.92 0 0 0 3.55 2ZM22 14c0-3.5-1.9-5.2-4.44-5.2a3.83 3.83 0 0 0-3.45 1.9V8.8h-3.3V22h3.3v-7.34c0-1.93.36-3.8 2.76-3.8 2.35 0 2.38 2.17 2.38 3.93V22H22V14Z"/></svg>
-            <span>LinkedIn</span>
-          </a>
-          <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram — G2M profile URL pending" title="Instagram (profile URL to be added)">
-            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2.2" y="2.2" width="19.6" height="19.6" rx="5.5"/><circle cx="12" cy="12" r="4.4"/><circle cx="17.7" cy="6.7" r="1" fill="currentColor" stroke="none"/></svg>
-            <span>Instagram</span>
-          </a>
-        </div>
-      </div>
-
-      <!-- ZONE 02 / Site directory -->
-      <div class="footer-directory-zone">
-        <div class="footer-directory-grid">
-          <nav aria-label="Explore" class="footer-column">
-            <h2>Explore</h2>
-            <a href="index.html">Home</a>
-            <a href="methodology.html">Our Methodology</a>
-            <a href="help.html">How We Help</a>
-            <a href="index.html#growth-pulse">Growth Pulse</a>
-          </nav>
-          <nav aria-label="Company" class="footer-column">
-            <h2>G2M Labs</h2>
-            <a href="about.html">About</a>
-            <a href="insights.html">Insights</a>
-            <a href="index.html#contact">Contact</a>
-          </nav>
-          <div class="footer-column footer-contact-column">
-            <h2>Contact</h2>
-            <p class="footer-contact-intro">Let's talk about growth.</p>
-            <a href="mailto:hello@g2mlabs.com?subject=G2M%20Labs%20conversation" title="Provisional email — verify before launch">Email us ↗</a>
-            <span class="footer-contact-note">The right conversation starts with a better question.</span>
-          </div>
-        </div>
-        <div class="footer-directory-baseline"><span>G2M / COMMERCIAL TRANSFORMATION</span><span>DIAGNOSE → PRIORITIZE → EXECUTE</span></div>
-      </div>
-
-      <!-- ZONE 03 / Editorial subscription as the footer's primary call to action -->
-      <aside class="footer-subscribe-zone" aria-labelledby="footerSubscribeTitle">
-        <div class="footer-subscribe-eyebrow"><span class="footer-subscribe-dot"></span> G2M LABS / INSIGHTS</div>
-        <h2 id="footerSubscribeTitle">Better questions.<br><em>Sharper decisions.</em></h2>
-        <p>Practical commercial perspectives on growth, leadership, and the signals worth paying attention to. Delivered occasionally.</p>
-        <form id="footerSubscribeForm" class="footer-subscribe-form" autocomplete="on">
-          <div class="footer-subscribe-controls">
-            <label class="visually-hidden" for="footerEmail">Email address</label>
-            <input type="email" name="email" id="footerEmail" autocomplete="email" placeholder="Your email address" maxlength="254" required>
-            <button type="submit">Subscribe <span aria-hidden="true">↗</span></button>
-          </div>
-          <label class="footer-subscribe-consent"><input type="checkbox" name="marketing_consent" required><span>Yes, send me G2M Labs insights. I can unsubscribe anytime.</span></label>
-          <p class="footer-subscribe-status" id="footerSubscribeStatus" role="status" aria-live="polite">Preview only — signup is not connected yet.</p>
-        </form>
-        <div class="footer-subscribe-footnote">NO NOISE. JUST PERSPECTIVE.</div>
-      </aside>
-    </div>
-  </div>
-
-  <!-- 07C / Legal ribbon -->
-  <div aria-label="Legal and credits links" class="footer-legal">
-    <span>© <span id="year"></span> G2M Labs</span><span aria-hidden="true" class="sep"></span>
-    <a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="credits.html">Credits</a>
-  </div>
-  <!-- 07D / Original closing field -->
-  <div class="footer-bottom"><div class="footer-bottom-inner"><span>G2M LABS / COMMERCIAL TRANSFORMATION</span><span>DIAGNOSE <b>→</b> PRIORITIZE <b>→</b> EXECUTE <b>→</b> MEASURE</span></div></div>
+<!-- 07A / Oversized animated wordmark — original Foundation 18 movement retained -->
+<div class="footer-wordmark-stage" id="wordmarkStage">
+<div aria-label="G2M Labs" class="footer-wordmark" id="footerWordmark">G2M LABS</div>
+</div>
+<!-- 07B / Architectural three-zone footer -->
+<div class="footer-main" id="footerMain">
+<div class="footer-main-inner footer-enter">
+<!-- ZONE 01 / Identity and channels -->
+<div class="footer-identity-zone">
+<div class="footer-identity-top">
+<div aria-label="G2M Labs" class="footer-brand-lockup"><div class="footer-brand-mark">G2M</div><span>LABS / COMMERCIAL PERFORMANCE</span></div>
+<p class="footer-identity-statement">Commercial clarity.<br/>Disciplined execution.<br/>Measurable outcomes.</p>
+</div>
+<div aria-label="Follow G2M Labs" class="footer-social-bar">
+<!-- Replace temporary platform-homepage URLs with official G2M Labs profiles before launch. -->
+<a aria-label="LinkedIn — G2M profile URL pending" href="https://www.linkedin.com/" rel="noopener noreferrer" target="_blank" title="LinkedIn (profile URL to be added)">
+<svg aria-hidden="true" fill="currentColor" viewbox="0 0 24 24"><path d="M5.2 8.8H1.9V22h3.3V8.8ZM3.55 2A1.92 1.92 0 1 0 3.6 5.84 1.92 1.92 0 0 0 3.55 2ZM22 14c0-3.5-1.9-5.2-4.44-5.2a3.83 3.83 0 0 0-3.45 1.9V8.8h-3.3V22h3.3v-7.34c0-1.93.36-3.8 2.76-3.8 2.35 0 2.38 2.17 2.38 3.93V22H22V14Z"></path></svg>
+<span>LinkedIn</span>
+</a>
+<a aria-label="Instagram — G2M profile URL pending" href="https://www.instagram.com/" rel="noopener noreferrer" target="_blank" title="Instagram (profile URL to be added)">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><rect height="19.6" rx="5.5" width="19.6" x="2.2" y="2.2"></rect><circle cx="12" cy="12" r="4.4"></circle><circle cx="17.7" cy="6.7" fill="currentColor" r="1" stroke="none"></circle></svg>
+<span>Instagram</span>
+</a>
+</div>
+</div>
+<!-- ZONE 02 / Site directory -->
+<div class="footer-directory-zone">
+<div class="footer-directory-grid">
+<nav aria-label="Explore" class="footer-column">
+<h2>Explore</h2>
+<a href="index.html">Home</a>
+<a href="methodology.html">Our Methodology</a>
+<a href="help.html">How We Help</a>
+<a href="index.html#growth-pulse">Growth Pulse</a>
+</nav>
+<nav aria-label="Company" class="footer-column">
+<h2>G2M Labs</h2>
+<a href="about.html">About</a>
+<a href="insights.html">Insights</a>
+<a href="index.html#contact">Contact</a>
+</nav>
+<div class="footer-column footer-contact-column">
+<h2>Contact</h2>
+<p class="footer-contact-intro">Let's talk about growth.</p>
+<a href="mailto:hello@g2mlabs.com?subject=G2M%20Labs%20conversation" title="Provisional email — verify before launch">Email us ↗</a>
+<span class="footer-contact-note">The right conversation starts with a better question.</span>
+</div>
+</div>
+<div class="footer-directory-baseline"><span>G2M / COMMERCIAL TRANSFORMATION</span><span>DIAGNOSE → PRIORITIZE → EXECUTE</span></div>
+</div>
+<!-- ZONE 03 / Editorial subscription as the footer's primary call to action -->
+<aside aria-labelledby="footerSubscribeTitle" class="footer-subscribe-zone">
+<div class="footer-subscribe-eyebrow"><span class="footer-subscribe-dot"></span> G2M LABS / INSIGHTS</div>
+<h2 id="footerSubscribeTitle">Better questions.<br/><em>Sharper decisions.</em></h2>
+<p>Practical commercial perspectives on growth, leadership, and the signals worth paying attention to. Delivered occasionally.</p>
+<form autocomplete="on" class="footer-subscribe-form" id="footerSubscribeForm">
+<div class="footer-subscribe-controls">
+<label class="visually-hidden" for="footerEmail">Email address</label>
+<input autocomplete="email" id="footerEmail" maxlength="254" name="email" placeholder="Your email address" required="" type="email"/>
+<button type="submit">Subscribe <span aria-hidden="true">↗</span></button>
+</div>
+<label class="footer-subscribe-consent"><input name="marketing_consent" required="" type="checkbox"/><span>Yes, send me G2M Labs insights. I can unsubscribe anytime.</span></label>
+<p aria-live="polite" class="footer-subscribe-status" id="footerSubscribeStatus" role="status">Preview only — signup is not connected yet.</p>
+</form>
+<div class="footer-subscribe-footnote">NO NOISE. JUST PERSPECTIVE.</div>
+</aside>
+</div>
+</div>
+<!-- 07C / Legal ribbon -->
+<div aria-label="Legal and credits links" class="footer-legal">
+<span>© <span id="year"></span> G2M Labs</span><span aria-hidden="true" class="sep"></span>
+<a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="credits.html">Credits</a>
+</div>
+<!-- 07D / Original closing field -->
+<div class="footer-bottom"><div class="footer-bottom-inner"><span>G2M LABS / COMMERCIAL TRANSFORMATION</span><span>DIAGNOSE <b>→</b> PRIORITIZE <b>→</b> EXECUTE <b>→</b> MEASURE</span></div></div>
 </footer>
-<!-- END SECTION 07 / FOUNDATION 19 FOOTER -->
+<!-- END SECTION 07 / FOUNDATION 21 FOOTER -->
 <!-- END SECTION 07 -->
-<script defer="True" src="main.js">
+<script defer="" src="offering-cards.js"></script><script defer="True" src="main.js">
 </script>
-<script src="nav-dropdown.js" defer></script>
-<script src="footer-signup.js" defer></script>
+<script defer="" src="nav-dropdown.js"></script>
+<script defer="" src="footer-signup.js"></script>
 </body>
 </html>

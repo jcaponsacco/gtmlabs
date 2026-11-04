@@ -519,3 +519,16 @@ body{overflow-x:hidden}.method-section{position:relative;padding:clamp(84px,9vw,
   .footer-foundation-19 .footer-legal{gap:13px;}
 }
 @media(prefers-reduced-motion:reduce){.footer-foundation-19 .footer-social-bar a,.footer-foundation-19 .footer-subscribe-controls button{transition:none;transform:none!important;}}
+
+/* FOUNDATION 21 / COMPACT ENGAGEMENT GUIDE AND DIRECT LANDING TARGETS */
+.f21-offer-guide{padding:clamp(65px,8vw,115px) 0;background:#edf1ee;color:#14382e}
+.f21-offer-guide h2{max-width:820px;margin:14px 0 17px}
+.f21-offer-guide .f21-intro{max-width:850px;line-height:1.7;color:#52665e;margin-bottom:36px}
+.f21-offer-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.f21-offer{border:1px solid #d7e0d8;border-top:5px solid var(--f21);background:#fff;padding:27px 25px 28px;min-width:0;scroll-margin-top:100px}
+.f21-offer .f21-index{font-size:10px;font-weight:800;letter-spacing:.12em;color:var(--f21);margin-bottom:23px}
+.f21-offer h3{font-size:clamp(22px,2.25vw,30px);line-height:1.17;letter-spacing:-.035em;margin:0 0 18px}
+.f21-offer p{font-size:14px;line-height:1.7;color:#455b51;margin-bottom:17px}
+.f21-offer p strong{color:#14382e}
+.f21-offer a{color:var(--f21);font-size:13px;font-weight:800;text-decoration:underline;text-underline-offset:4px}
+@media(max-width:900px){.f21-offer-list{grid-template-columns:1fr;max-width:680px}.f21-offer{scroll-margin-top:100px}}

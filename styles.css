@@ -1982,7 +1982,7 @@ button:disabled {
 
 
 /* ===================================================================
-   G2M FOUNDATION 19 / THREE-ZONE EDITORIAL FOOTER
+   G2M FOUNDATION 20 / THREE-ZONE EDITORIAL FOOTER
    Approved footer implementation; shared across all three site pages.
    Existing footer scroll animation IDs and variables are preserved.
    =================================================================== */
@@ -2090,3 +2090,61 @@ button:disabled {
   .footer-foundation-19 .footer-legal{gap:13px;}
 }
 @media(prefers-reduced-motion:reduce){.footer-foundation-19 .footer-social-bar a,.footer-foundation-19 .footer-subscribe-controls button{transition:none;transform:none!important;}}
+
+/* ================================================================
+   FOUNDATION 20 / SECTION 02B — PINNED INLINE REFRAME REVEAL
+   Pin, don't wheel-lock: browser scroll continues through a 1.85 viewport
+   stage while the question visibly holds in place and 'Maybe.' fades in.
+   ================================================================ */
+.reframe-scroll-stage { height: 190svh; position: relative; }
+.reframe-scroll-stage #reframe {
+  position: sticky;
+  top: 0;
+  box-sizing: border-box;
+  min-height: 100svh;
+  height: 100svh;
+  padding: clamp(72px, 8vh, 110px) 0;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+#reframe .reframe-content { width: 100%; }
+/* Foundation 20: one baseline, reserved space; the yellow word never shifts the headline. */
+#reframe h2 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  column-gap: clamp(12px, 2vw, 30px);
+  row-gap: 0;
+  font-size: clamp(31px, 3.85vw, 65px);
+}
+#reframe .reframe-question { display: inline-block; white-space: nowrap; }
+#reframe .reframe-maybe {
+  display: inline-block;
+  flex: 0 0 auto;
+  white-space: nowrap;
+  font-size: 2em;
+  line-height: 1.05;
+  color: #f1d875;
+  font-style: italic;
+  opacity: var(--reframe-reveal, 0);
+  transform: translate3d(0, 0, 0);
+  will-change: opacity;
+}
+#reframe .reframe-description { max-width: 920px; }
+@media(max-width: 850px) {
+  .reframe-scroll-stage {height: 175svh;}
+  .reframe-scroll-stage #reframe {padding: 56px 0;}
+  #reframe h2 {font-size: clamp(24px, 4.7vw, 42px);}
+}
+@media(max-width: 480px) {
+  .reframe-scroll-stage {height: 160svh;}
+  .reframe-scroll-stage #reframe {padding: 42px 0;}
+  #reframe h2 {font-size: clamp(19px, 4.8vw, 25px);margin-bottom:20px;column-gap:8px;}
+  #reframe .reframe-maybe {font-size:2em;}
+}
+@media(prefers-reduced-motion:reduce) {
+  .reframe-scroll-stage {height:auto;}
+  .reframe-scroll-stage #reframe {position:relative;height:auto;min-height:70svh;}
+  #reframe .reframe-maybe {opacity:1!important;transform:none!important;will-change:auto;}
+}

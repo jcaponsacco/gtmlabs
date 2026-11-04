@@ -145,6 +145,26 @@ addEventListener('scroll',request,{passive:true});addEventListener('resize',requ
       });
    });
  }
+ // PILL VELOCITY / WAAPI preserves each capsule's current position as the rate changes.
+ // Yellow signals travel at normal speed. As warning red emerges (.17–.44),
+ // their speed eases down to 34%. Scrolling back restores the original pace.
+ // CSS animation-duration is intentionally NOT modified (that would jump the pills).
+ const pills=[...story.querySelectorAll('.flow .pulse')];
+ const motionReduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+ let pillAnimations=null,lastPillRate=1;
+ function setPillSpeed(heat){
+   if(motionReduced)return;
+   if(!pillAnimations){
+     pillAnimations=pills.map(pill=>pill.getAnimations().find(a=>a.animationName==='travel')).filter(Boolean);
+   }
+   const rate=1-.66*heat;
+   if(Math.abs(rate-lastPillRate)<.008)return;
+   lastPillRate=rate;
+   pillAnimations.forEach(animation=>{
+     if(typeof animation.updatePlaybackRate==='function')animation.updatePlaybackRate(rate);
+     else animation.playbackRate=rate;
+   });
+ }
  let manual=null,queued=false,lastP=-1;
  function render(p){p=clamp(p);if(Math.abs(p-lastP)<.0004)return;lastP=p;
  const emerge=between(p,.18,.42), open=between(p,.48,.77),reveal=between(p,.62,.87);
@@ -152,6 +172,7 @@ addEventListener('scroll',request,{passive:true});addEventListener('resize',requ
  // SIGNAL COLOR STORY / Yellow activity becomes red as friction warnings emerge.
  // Scroll progress .17–.44 follows the rising warning cards; reversible.
  const warningHeat=between(p,.17,.44);
+ setPillSpeed(warningHeat); // 100% velocity (yellow) → 34% velocity (red).
  const interpolate=(from,to,t)=>from.map((v,i)=>Math.round(v+(to[i]-v)*t));
  const heatColor=(a,b)=>`rgb(${interpolate(a,b,warningHeat).join(',')})`;
  story.style.setProperty('--pulse-color',heatColor([255,225,124],[232,71,62]));
@@ -219,29 +240,7 @@ document.getElementById('investmentTotal').textContent=fmt(total);document.getEl
 (()=>{const story=document.getElementById('engineScrollStory'),stage=document.getElementById('engineStageScroll');if(story&&stage){let raf=false;const update=()=>{raf=false;const r=story.getBoundingClientRect(),range=Math.max(1,story.offsetHeight-innerHeight),p=Math.max(0,Math.min(1,-r.top/range));const warn=Math.max(0,Math.min(1,(p-.045)/.13))*Math.max(0,Math.min(1,(.49-p)/.12));stage.style.setProperty('--warn',warn.toFixed(3));stage.style.setProperty('--grey',Math.max(0,Math.min(1,(p-.08)/.16)).toFixed(3));stage.style.setProperty('--red',(Math.max(0,Math.min(.65,(p-.13)*4))*Math.max(0,Math.min(1,(.47-p)/.14))).toFixed(3))};addEventListener('scroll',()=>{if(!raf){raf=true;requestAnimationFrame(update)}},{passive:true});addEventListener('resize',update);update()}
 const questions=[['Do you have a clearly defined target customer—and evidence they buy for the reasons you expect?','Customer fit and buying conditions','market'],['Are sales conversations consistently turning into qualified opportunities with clear next steps?','Opportunity progression','process'],['Can your team advance important deals without routine executive intervention?','Team ownership and leadership','people'],['Do your CRM and GTM tools give you a reliable view of accounts, activity and outcomes?','Information and systems','systems'],['Can you connect commercial investment to pipeline quality, revenue and gross profit?','Commercial return and measurement','economics']];let index=0,answers=Array(5).fill(null);const form=document.getElementById('pulseForm'),result=document.getElementById('pulseResult');if(!form)return;function render(){form.hidden=false;result.hidden=true;document.getElementById('pulseCount').textContent=`QUESTION ${index+1} OF 5`;document.getElementById('pulseFill').style.width=((index+1)*20)+'%';document.getElementById('pulseQuestion').textContent=questions[index][0];document.getElementById('pulseHint').textContent='Choose the answer that best describes your current situation.';document.getElementById('pulseBack').disabled=index===0}function finish(){form.hidden=true;result.hidden=false;const gaps=answers.map((a,i)=>({a,i,score:a==='no'?2:a==='somewhat'?1:0})).filter(x=>x.score>0).sort((a,b)=>b.score-a.score);document.getElementById('pulseResultTitle').textContent=gaps.length?'There may be more than one growth constraint.':'You report a solid foundation. The next step is to verify it.';document.getElementById('pulseResultSummary').textContent=gaps.length?'Your responses suggest several areas worth examining before committing to more headcount, systems or executive time. These are hypotheses to test, not confirmed causes.':'Your answers indicate confidence across the five dimensions. A focused review can test whether reported conditions match performance data.';const el=document.getElementById('pulseSignals');el.innerHTML='';(gaps.length?gaps.slice(0,3):[{i:0,a:'yes'},{i:4,a:'yes'}]).forEach(({i,a})=>{let d=document.createElement('div');d.className='pulse-signal';const strong=document.createElement('strong');strong.textContent=questions[i][1];const small=document.createElement('span');small.textContent=a==='no'?'Priority to investigate':a==='somewhat'?'Partially established; worth validating':'Reported strength; verify with evidence';d.append(strong,small);el.append(d)})}document.querySelectorAll('[data-answer]').forEach(b=>b.addEventListener('click',()=>{answers[index]=b.dataset.answer;if(index===4)finish();else{index++;render()}}));document.getElementById('pulseBack').addEventListener('click',()=>{if(index>0){index--;render()}});function reset(){index=0;answers.fill(null);render()}document.getElementById('pulseRestart').addEventListener('click',reset);document.getElementById('pulseAgain').addEventListener('click',reset);render()})();
 
-/* SECTION 05 — APPROVED SERVICES CARDS / CLICK-TO-FLIP ONLY
-   Click or Enter/Space on card to turn; stays flipped until clicked again.
-   Links on reverse face navigate without toggling the card. Escape returns. */
-(function(){
-  document.querySelectorAll('#services .velocity-flip-card').forEach(card=>{
-    function setFlipped(flipped){
-      card.classList.toggle('is-flipped',flipped);
-      card.setAttribute('aria-expanded',String(flipped));
-      const link=card.querySelector('.velocity-deep-link');
-      if(link){link.tabIndex=flipped?0:-1;}
-    }
-    setFlipped(false);
-    card.addEventListener('click',e=>{
-      if(e.target.closest('a'))return;
-      setFlipped(!card.classList.contains('is-flipped'));
-    });
-    card.addEventListener('keydown',e=>{
-      if(e.target.closest('a'))return;
-      if(e.key==='Enter'||e.key===' '){e.preventDefault();setFlipped(!card.classList.contains('is-flipped'));}
-      else if(e.key==='Escape'&&card.classList.contains('is-flipped')){e.preventDefault();setFlipped(false);}
-    });
-  });
-})();
+/* SECTION 05 / THREE WAYS TO ENGAGE — see offering-cards.js */
 
 
 /* ============================================================
@@ -301,4 +300,31 @@ const questions=[['Do you have a clearly defined target customer—and evidence 
     if(!form.reportValidity())return;
     if(status)status.textContent='This is a design preview. Your details have not been sent or saved. Subscription sign-up will become available when G2M Labs connects its email platform.';
   });
+})();
+
+
+/* FOUNDATION 20 — Inline reframe visual pause and timed yellow “Maybe.” reveal. */
+(()=>{
+  const stage=document.getElementById('reframeScrollStage');
+  const section=document.getElementById('reframe');
+  if(!stage||!section) return;
+  const reduced=matchMedia('(prefers-reduced-motion: reduce)');
+  let pending=false;
+  const clamp=x=>Math.max(0,Math.min(1,x));
+  function render(){
+    pending=false;
+    if(reduced.matches){section.style.setProperty('--reframe-reveal','1');return;}
+    const bounds=stage.getBoundingClientRect();
+    const distance=Math.max(1,stage.offsetHeight-innerHeight);
+    const progress=clamp(-bounds.top/distance);
+    // Hold the opening question; start revealing only after scrolling into the pin.
+    const reveal=clamp((progress-.28)/.30);
+    section.style.setProperty('--reframe-reveal',reveal.toFixed(4));
+    // Opacity-only: no vertical slide or layout shift in the inline phrase.
+  }
+  function update(){if(!pending){pending=true;requestAnimationFrame(render);}}
+  addEventListener('scroll',update,{passive:true});
+  addEventListener('resize',update);
+  reduced.addEventListener?.('change',update);
+  render();
 })();
