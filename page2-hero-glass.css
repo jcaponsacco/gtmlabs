@@ -1,0 +1,76 @@
+/* G2M Labs / PAGE 2 HERO STUDY 03 — dark-glass info surfaces.
+   Deliberately limited to hero-art callouts. The approved background,
+   SVG track, particle motion, typography/layout and page content stay intact. */
+.p2-vortex-hero .p2-hero-art {
+  /* preserve original placement, with a little transparent breathing room */
+  isolation: isolate;
+}
+.p2-vortex-hero .p2-art-label {
+  color: #f2fff7;
+  background: linear-gradient(128deg,
+    rgba(4, 25, 20, .62), rgba(9, 45, 34, .40) 65%, rgba(4, 25, 20, .54));
+  border: 1px solid rgba(159, 242, 197, .46);
+  border-top: 1px solid rgba(207, 255, 222, .72);
+  box-shadow: 0 18px 38px rgba(0, 10, 8, .30),
+    inset 0 1px 0 rgba(238, 255, 241, .14),
+    0 0 22px rgba(78, 233, 153, .10);
+  border-radius: 14px;
+  padding: 19px 21px;
+  backdrop-filter: blur(12px) saturate(120%);
+  -webkit-backdrop-filter: blur(12px) saturate(120%);
+  transition: border-color .25s ease, box-shadow .25s ease;
+}
+.p2-vortex-hero .p2-art-label.art-a,
+.p2-vortex-hero .p2-art-label.art-b {
+  border-top: 1px solid rgba(207,255,222,.72);
+}
+.p2-vortex-hero .p2-art-label::after {
+  content: "";
+  position: absolute;
+  right: 12px;
+  top: -2px;
+  width: 32px;
+  height: 3px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, transparent, rgba(176,255,210,.76));
+  filter: blur(1px);
+  pointer-events:none;
+}
+.p2-vortex-hero .p2-art-index {
+  color: #a4f5c8;
+  text-shadow: 0 0 12px rgba(77, 214, 145, .2);
+  letter-spacing: .14em;
+  margin-bottom: 11px;
+}
+.p2-vortex-hero .p2-art-label strong {
+  color: #f1fff5;
+  font-weight: 680;
+  line-height: 1.24;
+  text-shadow: 0 2px 10px rgba(0, 8, 5, .36);
+}
+/* The central badge was originally a solid radial green disk. Treat it as
+   restrained glass as well, so neither callout competes with the artwork. */
+.p2-vortex-hero .p2-art-center {
+  background: radial-gradient(circle at 38% 20%,
+    rgba(45, 113, 78, .40), rgba(4, 28, 22, .56) 72%);
+  border: 1px solid rgba(151, 237, 189, .44);
+  box-shadow: 0 22px 48px rgba(0, 12, 9, .28),
+    0 0 25px rgba(55, 211, 125, .10),
+    inset 0 1px 0 rgba(220, 255, 231, .16);
+  backdrop-filter: blur(10px) saturate(120%);
+  -webkit-backdrop-filter: blur(10px) saturate(120%);
+}
+.p2-vortex-hero .p2-art-center small,
+.p2-vortex-hero .p2-art-center i { color: #c9ead8; }
+.p2-vortex-hero .p2-art-center strong { color:#f9fff9; text-shadow: 0 1px 13px rgba(0,0,0,.37); }
+/* Keep the image luminous and the decorative rings unobtrusive. */
+.p2-vortex-hero .p2-art-ring { border-color: rgba(176,255,202,.25); }
+.p2-vortex-hero .p2-art-ring.ring2 { border-color: rgba(140,205,194,.18); }
+@media (max-width: 580px) {
+  .p2-vortex-hero .p2-art-label { padding: 14px 13px; border-radius: 11px; }
+  .p2-vortex-hero .p2-art-index { font-size: 8px; margin-bottom: 8px; }
+}
+@media (prefers-reduced-transparency: reduce) {
+  .p2-vortex-hero .p2-art-label { background: rgba(5,30,24,.94); backdrop-filter:none; -webkit-backdrop-filter:none; }
+  .p2-vortex-hero .p2-art-center { background: rgba(5,30,24,.93); backdrop-filter:none; -webkit-backdrop-filter:none; }
+}

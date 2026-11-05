@@ -1,0 +1,37 @@
+/* PAGE 2 HERO STUDY 02 / OPTION 2 — Cinematic image + aligned SVG particles.
+   A standalone CSS layer over Foundation 25.1. No approved section modifications. */
+.p2-vortex-hero {
+  position:relative; isolation:isolate; background:#061713;
+  min-height:min(850px, 100vh);
+}
+.p2-vortex-hero::before { display:none; }
+.p2-vortex-stage { position:absolute; inset:0; z-index:0; overflow:hidden; pointer-events:none; }
+.p2-vortex-static {
+  position:absolute; inset:0;
+  background-image:url('assets/page2-vortex-option2.webp');
+  background-size:cover; background-position:center center;
+  filter:saturate(1.06) contrast(1.025);
+}
+/* The SVG uses the exact same aspect-ratio cropping as background-size: cover. */
+.p2-vortex-motion { position:absolute; inset:0; width:100%; height:100%; z-index:2; overflow:hidden; }
+/* Left-hand copy stays readable, but the luminous central/right image remains uncovered. */
+.p2-vortex-veil { position:absolute; inset:0; z-index:1; background:
+ linear-gradient(90deg,rgba(2,13,11,.90) 0%,rgba(3,17,14,.78) 23%,rgba(3,17,14,.46) 40%,rgba(3,17,14,.07) 60%,transparent 78%),
+ linear-gradient(0deg,rgba(2,12,10,.20),transparent 22%); }
+.p2-vortex-hero .p2-hero-grid { position:relative; z-index:3; grid-template-columns:minmax(0,730px) 1fr; min-height:590px; }
+.p2-vortex-hero .p2-hero-copy { max-width:680px; }
+.p2-vortex-hero .p2-hero-copy h1 { text-shadow:0 4px 28px rgba(0,0,0,.35); }
+.p2-vortex-hero .p2-hero-copy p { color:#e0ebe4; text-shadow:0 1px 14px rgba(0,0,0,.27); }
+.p2-vortex-hero .p2-hero-rail { z-index:3; }
+.p2-vortex-particle { pointer-events:none; }
+@media(max-width:900px){
+ .p2-vortex-hero .p2-hero-grid { grid-template-columns:1fr; min-height:590px; }
+ .p2-vortex-hero .p2-hero-copy { max-width:680px; }
+ .p2-vortex-veil { background:linear-gradient(90deg,rgba(2,13,11,.92),rgba(3,17,14,.79) 44%,rgba(3,17,14,.24) 80%),linear-gradient(0deg,rgba(2,12,10,.25),transparent 32%); }
+}
+@media(max-width:580px){
+ .p2-vortex-hero { min-height:700px; }
+ .p2-vortex-hero .p2-hero-grid { min-height:620px; }
+ .p2-vortex-veil { background:linear-gradient(90deg,rgba(2,13,11,.94),rgba(3,17,14,.76) 65%,rgba(3,17,14,.42)); }
+}
+@media(prefers-reduced-motion:reduce){ .p2-vortex-particle { display:none; } }
