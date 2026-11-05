@@ -1,0 +1,229 @@
+/* ================================================================
+   G2M LABS — VISUAL IDENTITY STUDY 01 / PRECISION + ENERGY
+   Purpose: Test a stronger business-intelligence treatment while
+   preserving the approved Foundation 24 layout and interactions.
+   Scope: Homepage only. Methodology/help pages remain functional.
+   ================================================================ */
+body.precision-energy-study {
+  background:
+    radial-gradient(circle at 12% 0%, rgba(73, 155, 118, 0.08), transparent 34%),
+    radial-gradient(circle at 88% 22%, rgba(57, 118, 170, 0.08), transparent 28%),
+    linear-gradient(180deg, #f4f4ef 0%, #f6f7f3 100%);
+}
+body.precision-energy-study .eyebrow {
+  color: #347a8d;
+}
+body.precision-energy-study .nav {
+  background: #123328;
+  box-shadow: inset 0 -1px 0 rgba(255,255,255,.06);
+}
+body.precision-energy-study .nav.floating {
+  background: #153c30;
+  box-shadow: 0 18px 38px rgba(0,0,0,.24), inset 0 1px 0 rgba(255,255,255,.10);
+}
+body.precision-energy-study .brand small { color: #c6d8d1; }
+
+/* HERO ---------------------------------------------------------- */
+body.precision-energy-study .hero-under {
+  background:
+    radial-gradient(circle at 8% 15%, rgba(57,118,170,.07), transparent 28%),
+    linear-gradient(180deg, #f3f4ef 0%, #eff2ed 100%);
+}
+body.precision-energy-study .hero-under h2 {
+  color: #173228;
+}
+body.precision-energy-study .statement-word { color: #8db39e; }
+body.precision-energy-study .hero-panel {
+  background: #102720;
+}
+body.precision-energy-study .hero-panel::before {
+  filter: saturate(1.08) contrast(1.04) brightness(.88);
+}
+body.precision-energy-study .hero-panel::after {
+  background:
+    linear-gradient(90deg, rgba(4,16,13,.86) 0%, rgba(7,23,18,.74) 30%, rgba(8,24,18,.30) 56%, rgba(8,24,18,0) 70%),
+    radial-gradient(circle at 74% 25%, rgba(57,118,170,.12), transparent 22%),
+    radial-gradient(circle at 78% 78%, rgba(120,97,165,.13), transparent 24%);
+}
+body.precision-energy-study .hero-panel .eyebrow { color: #d4e7df; }
+body.precision-energy-study .hero-panel h1 span { color: #dff6e4; }
+body.precision-energy-study .hero-panel p { color: #e2ece7; }
+body.precision-energy-study .hero-panel .btn {
+  background: linear-gradient(180deg, #ffffff 0%, #f2f7f2 100%);
+  box-shadow: 0 10px 20px rgba(0,0,0,.18);
+}
+body.precision-energy-study .hero-panel .btn:hover {
+  background: #f1d875;
+}
+body.precision-energy-study .hero-signal-overlay { filter: drop-shadow(0 0 10px rgba(126, 220, 255, .18)); }
+body.precision-energy-study .hero-signal-line { stroke-width: 1.75; }
+body.precision-energy-study .hero-signal-line.blue { stroke: rgba(116, 207, 255, .78); }
+body.precision-energy-study .hero-signal-line.purple { stroke: rgba(185, 142, 255, .68); }
+body.precision-energy-study .hero-signal-line.gold { stroke: rgba(255, 213, 94, .62); }
+body.precision-energy-study .hero-signal-line.orange { stroke: rgba(255, 166, 92, .58); }
+body.precision-energy-study .hero-visual {
+  background: rgba(247, 251, 248, .92);
+  border-color: rgba(235, 245, 238, .84);
+  box-shadow: 0 34px 70px rgba(2,12,9,.40);
+}
+body.precision-energy-study .hero-visual-head { color: #173628; }
+body.precision-energy-study .signal-band {
+  background: linear-gradient(180deg, #fffdfa 0%, #f7f9f5 100%);
+  box-shadow: 0 16px 40px rgba(17,50,38,.12);
+}
+
+/* PIPELINE ------------------------------------------------------ */
+body.precision-energy-study .growth-engine-host {
+  background:
+    linear-gradient(180deg, #f8f8f4 0%, #f2f4f0 100%);
+}
+body.precision-energy-study .warning {
+  box-shadow: 0 10px 24px rgba(169,76,89,.14);
+}
+body.precision-energy-study .warning strong { letter-spacing: .02em; }
+body.precision-energy-study .system,
+body.precision-energy-study .pipeline-shell,
+body.precision-energy-study .pipe-inner {
+  box-shadow: 0 24px 60px rgba(11,34,26,.12);
+}
+body.precision-energy-study .reframe-section {
+  background:
+    radial-gradient(circle at 76% 30%, rgba(255,215,105,.07), transparent 18%),
+    linear-gradient(180deg, #12392f 0%, #153e32 100%);
+}
+body.precision-energy-study .reframe-title .maybe-word,
+body.precision-energy-study #inlineMaybe {
+  color: #f1d875 !important;
+  text-shadow: 0 0 16px rgba(241,216,117,.18);
+}
+
+/* INVESTMENT / BLUE ANALYTICAL MOMENT ------------------------- */
+body.precision-energy-study .investment-section {
+  background:
+    radial-gradient(circle at 10% 10%, rgba(57,118,170,.09), transparent 24%),
+    linear-gradient(180deg, #eef4f9 0%, #f6f8fb 50%, #f4f5f1 100%);
+}
+body.precision-energy-study .investment-section .eyebrow { color: #3976aa; }
+body.precision-energy-study .investment-section h2 { color: #18342c; }
+body.precision-energy-study .investment-intro { color: #4d6577; }
+body.precision-energy-study .invest-choice {
+  border-color: #c5d7e8;
+  background: rgba(255,255,255,.82);
+}
+body.precision-energy-study .invest-choice.active,
+body.precision-energy-study .invest-choice:hover {
+  border-color: #3976aa;
+  box-shadow: 0 14px 30px rgba(57,118,170,.12);
+}
+body.precision-energy-study .invest-panel {
+  border: 1px solid #d3dfeb;
+  box-shadow: 0 22px 50px rgba(30,64,96,.09);
+}
+body.precision-energy-study .model-pill {
+  background: #e8f1f8;
+  color: #2f6b9e;
+}
+body.precision-energy-study .result-total { color: #1e6093; }
+
+/* VELOCITY ------------------------------------------------------ */
+body.precision-energy-study .velocity-bridge {
+  background:
+    radial-gradient(circle at 18% 16%, rgba(57,118,170,.16), transparent 24%),
+    radial-gradient(circle at 84% 78%, rgba(120,97,165,.14), transparent 26%),
+    linear-gradient(180deg, #0b1715 0%, #102721 38%, #112f27 100%);
+  border-top: 1px solid rgba(255,255,255,.08);
+  border-bottom: 1px solid rgba(255,255,255,.06);
+}
+body.precision-energy-study .velocity-bridge .p2-kicker { color: #a3c6ea; }
+body.precision-energy-study .velocity-bridge h2 { color: #f7fbf8; }
+body.precision-energy-study .velocity-bridge .p2-velocity-layout > div > p { color: #c7d8d2; }
+body.precision-energy-study .velocity-bridge .p2-text-link { border-bottom-color: #7da9d2; }
+body.precision-energy-study .velocity-bridge .p2-loop {
+  background:
+    radial-gradient(circle at 80% 15%, rgba(57,118,170,.18), transparent 25%),
+    radial-gradient(circle at 12% 86%, rgba(67,131,106,.22), transparent 28%),
+    linear-gradient(180deg, #143028 0%, #10261f 100%);
+  border-color: rgba(150, 187, 169, .32);
+  box-shadow: 0 34px 78px rgba(2,10,8,.42);
+}
+body.precision-energy-study .velocity-bridge .p2-loop-head { border-bottom-color: rgba(145,182,164,.32); }
+body.precision-energy-study .velocity-bridge .p2-loop-steps > div {
+  background: rgba(249,252,250,.98);
+  border-top-width: 4px;
+  box-shadow: 0 14px 26px rgba(4,18,13,.12);
+}
+body.precision-energy-study .velocity-bridge .p2-loop-steps > div:nth-child(1),
+body.precision-energy-study .velocity-bridge .p2-loop-steps > div:nth-child(2) { border-top-color: #4b91d2; }
+body.precision-energy-study .velocity-bridge .p2-loop-steps > div:nth-child(3),
+body.precision-energy-study .velocity-bridge .p2-loop-steps > div:nth-child(4) { border-top-color: #35a870; }
+body.precision-energy-study .velocity-bridge .p2-loop-steps > div:nth-child(5),
+body.precision-energy-study .velocity-bridge .p2-loop-steps > div:nth-child(6) { border-top-color: #f1d875; }
+body.precision-energy-study .velocity-bridge .p2-loop-steps small { color: #3976aa; }
+body.precision-energy-study .velocity-bridge .p2-loop-bottom { color: #d6e8de; }
+
+/* OFFER CARDS --------------------------------------------------- */
+body.precision-energy-study .services-section {
+  background: linear-gradient(180deg, #f7f7f4 0%, #f2f4f0 100%);
+}
+body.precision-energy-study .g2m-deal-section .eyebrow { color: #3976aa; }
+body.precision-energy-study .g2m-deal-section h2 em { color: #43836a; }
+body.precision-energy-study .g2m-deal-card {
+  background:
+    linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(251,252,249,1) 100%);
+  border-color: #dbe4de;
+  box-shadow: 0 16px 38px rgba(16,41,30,.10);
+}
+body.precision-energy-study .g2m-deal-card:hover,
+body.precision-energy-study .g2m-deal-card:focus-visible {
+  box-shadow: 0 26px 54px rgba(16,41,30,.18);
+}
+body.precision-energy-study .g2m-deal-card:nth-child(1) { background-image: linear-gradient(180deg, #ffffff 0%, #f7fbf8 100%); }
+body.precision-energy-study .g2m-deal-card:nth-child(2) { background-image: linear-gradient(180deg, #ffffff 0%, #f5f9fd 100%); }
+body.precision-energy-study .g2m-deal-card:nth-child(3) { background-image: linear-gradient(180deg, #ffffff 0%, #f8f5fc 100%); }
+
+/* CLOSING / FOOTER -------------------------------------------- */
+body.precision-energy-study .closing {
+  background:
+    radial-gradient(circle at 78% 18%, rgba(57,118,170,.10), transparent 24%),
+    linear-gradient(180deg, #d9e8dc 0%, #d4e1d7 100%);
+}
+body.precision-energy-study .closing .eyebrow { color: #255d72; }
+body.precision-energy-study .closing .btn {
+  background: #17372c;
+  box-shadow: 0 10px 22px rgba(10,25,20,.15);
+}
+body.precision-energy-study .closing .outline-btn {
+  border-color: #9db8c8;
+  color: #255d72;
+}
+body.precision-energy-study .footer-main {
+  background:
+    radial-gradient(circle at 85% 18%, rgba(120,97,165,.18), transparent 20%),
+    linear-gradient(180deg, #070b10 0%, #091117 100%);
+}
+body.precision-energy-study .footer-subscribe-zone {
+  background: linear-gradient(135deg, rgba(24,18,60,.95) 0%, rgba(8,17,61,.96) 100%);
+  box-shadow: 0 24px 48px rgba(0,0,0,.28);
+}
+body.precision-energy-study .footer-subscribe-controls {
+  background: #195d3e;
+}
+body.precision-energy-study .footer-subscribe-form input[type="text"],
+body.precision-energy-study .footer-subscribe-form input[type="email"] {
+  background: rgba(255,255,255,.27);
+  color: #eef7f1;
+}
+body.precision-energy-study .footer-subscribe-form input::placeholder { color: rgba(238,247,241,.75); }
+body.precision-energy-study .footer-subscribe-submit {
+  background: #f1d875;
+  color: #20332b;
+}
+body.precision-energy-study .footer-bottom {
+  background: #05070a;
+}
+
+/* RESPONSIVE: keep the treatment tasteful on smaller screens. */
+@media (max-width: 820px) {
+  body.precision-energy-study .velocity-bridge .p2-loop { box-shadow: 0 18px 40px rgba(2,10,8,.32); }
+  body.precision-energy-study .g2m-deal-card { box-shadow: 0 12px 26px rgba(16,41,30,.10); }
+}
