@@ -41,6 +41,53 @@
   .footer-foundation-19 .footer-social-bar a { flex: initial; }
 }
 </style>
+<style id="g2m-social-icon-colors">
+/* STUDY 08 / Footer social icon color treatment inspired by editorial mega-menu reference */
+.footer-foundation-19 .footer-social-bar a{
+  position:relative;
+  background:linear-gradient(180deg, rgba(18,24,40,.88), rgba(10,15,28,.92));
+  border-color:rgba(94,118,158,.36);
+  color:rgba(236,240,244,.94);
+}
+.footer-foundation-19 .footer-social-bar a::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:inherit;
+  background:radial-gradient(circle at 18% 50%, rgba(255,255,255,.03), transparent 46%);
+  pointer-events:none;
+}
+.footer-foundation-19 .footer-social-bar a:hover,
+.footer-foundation-19 .footer-social-bar a:focus-visible{
+  background:linear-gradient(180deg, rgba(27,35,57,.95), rgba(16,23,42,.98));
+  border-color:rgba(128,153,197,.52);
+}
+.footer-foundation-19 .footer-social-bar a span{
+  color:rgba(236,240,244,.92);
+}
+.footer-foundation-19 .footer-social-bar a svg{
+  width:18px;
+  height:18px;
+  opacity:.98;
+}
+.footer-foundation-19 .footer-social-bar a.social-linkedin svg{
+  color:#4b83ff;
+  filter:drop-shadow(0 0 8px rgba(75,131,255,.18));
+}
+.footer-foundation-19 .footer-social-bar a.social-instagram svg{
+  color:#d64cff;
+  filter:drop-shadow(0 0 8px rgba(214,76,255,.16));
+}
+.footer-foundation-19 .footer-social-bar a.social-substack svg{
+  color:#ff9b2f;
+  filter:drop-shadow(0 0 8px rgba(255,155,47,.16));
+}
+.footer-foundation-19 .footer-social-bar a.social-x svg{
+  color:#f0cf52;
+  filter:drop-shadow(0 0 8px rgba(240,207,82,.16));
+}
+
+</style>
 </head>
 <body>
 <!-- ================================================================
@@ -460,17 +507,17 @@
 </div>
 <div aria-label="Follow G2M Labs" class="footer-social-bar">
 <!-- Replace temporary platform-homepage URLs with official G2M Labs profiles before launch. -->
-<a aria-label="LinkedIn — G2M profile URL pending" href="https://www.linkedin.com/" rel="noopener noreferrer" target="_blank" title="LinkedIn (profile URL to be added)">
+<a class="social-linkedin" aria-label="LinkedIn — G2M profile URL pending" href="https://www.linkedin.com/" rel="noopener noreferrer" target="_blank" title="LinkedIn (profile URL to be added)">
 <svg aria-hidden="true" fill="currentColor" viewbox="0 0 24 24"><path d="M5.2 8.8H1.9V22h3.3V8.8ZM3.55 2A1.92 1.92 0 1 0 3.6 5.84 1.92 1.92 0 0 0 3.55 2ZM22 14c0-3.5-1.9-5.2-4.44-5.2a3.83 3.83 0 0 0-3.45 1.9V8.8h-3.3V22h3.3v-7.34c0-1.93.36-3.8 2.76-3.8 2.35 0 2.38 2.17 2.38 3.93V22H22V14Z"></path></svg>
 <span>LinkedIn</span>
 </a>
-<a aria-label="Instagram — G2M profile URL pending" href="https://www.instagram.com/" rel="noopener noreferrer" target="_blank" title="Instagram (profile URL to be added)">
+<a class="social-instagram" aria-label="Instagram — G2M profile URL pending" href="https://www.instagram.com/" rel="noopener noreferrer" target="_blank" title="Instagram (profile URL to be added)">
 <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><rect height="19.6" rx="5.5" width="19.6" x="2.2" y="2.2"></rect><circle cx="12" cy="12" r="4.4"></circle><circle cx="17.7" cy="6.7" fill="currentColor" r="1" stroke="none"></circle></svg>
 <span>Instagram</span>
 </a>
-<a aria-label="Substack — G2M publication URL pending" href="https://substack.com/" rel="noopener noreferrer" target="_blank" title="Substack (publication URL to be added)">
+<a class="social-substack" aria-label="Substack — G2M publication URL pending" href="https://substack.com/" rel="noopener noreferrer" target="_blank" title="Substack (publication URL to be added)">
 <svg aria-hidden="true" fill="currentColor" viewBox="0 0 24 24"><path d="M3.5 3.2h17v2.4h-17zm0 4h17v2.4h-17zm0 4h17v10.5l-8.5-4.7-8.5 4.7z"/></svg><span>Substack</span></a>
-<a aria-label="X — G2M profile URL pending" href="https://x.com/" rel="noopener noreferrer" target="_blank" title="X (profile URL to be added)">
+<a class="social-x" aria-label="X — G2M profile URL pending" href="https://x.com/" rel="noopener noreferrer" target="_blank" title="X (profile URL to be added)">
 <svg aria-hidden="true" fill="currentColor" viewBox="0 0 24 24"><path d="M18.9 2H22l-6.8 7.8L23.2 22h-6.3l-4.9-7.5L5.4 22H2.2l7.3-8.5L1.8 2h6.4l4.5 6.9L18.9 2Zm-1.1 18h1.7L7.3 3.9H5.5Z"/></svg><span>X</span></a>
 </div>
 </div>

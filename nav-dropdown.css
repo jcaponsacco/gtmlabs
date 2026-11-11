@@ -50,3 +50,21 @@ body:not(.home-page) .nav.floating::before { opacity:1; }
 .nav-home-group .nav-service-item { padding-block: 10px; }
 .nav-home-group .nav-service-item:hover .nav-service-arrow { color: #f1d875; }
 @media (max-width:850px) { .nav-home-group { display: none; } }
+
+/* Foundation 28 / Footer social consistency fix — identical 2×2 layout on all pages. */
+.footer-foundation-19 .footer-social-bar {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+.footer-foundation-19 .footer-social-bar a {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  padding: 10px 8px;
+  gap: 7px;
+  white-space: nowrap;
+}
+@media (max-width: 530px) {
+  .footer-foundation-19 .footer-social-bar a { flex: initial; }
+}

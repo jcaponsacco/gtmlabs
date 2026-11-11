@@ -82,3 +82,15 @@
   .velocity-bridge .p2-loop {padding:17px}
   .velocity-bridge .p2-loop-head {flex-direction:column}
 }
+
+/* STUDY 09 / Velocity headline: words illuminate yellow progressively as user scrolls. */
+.velocity-bridge h2 .velocity-scroll-word {
+  color: #f3f8f3;
+  transition: color 250ms ease;
+}
+.velocity-bridge h2 .velocity-scroll-word.is-lit {
+  color: #f1d875;
+}
+@media (prefers-reduced-motion: reduce) {
+  .velocity-bridge h2 .velocity-scroll-word { transition: none; }
+}
