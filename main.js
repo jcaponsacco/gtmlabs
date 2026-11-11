@@ -192,16 +192,31 @@ addEventListener('scroll',request,{passive:true});addEventListener('resize',requ
    if(p<sceneStarts[3] || finalLocal<.30){
      if(stageActivated){stageActivated=false;st.forEach(e=>{e.classList.remove('active');e.setAttribute('aria-pressed','false')});}
    }else{
-     // Hold Target from .30 to .47 of the final scene, then step through issues.
-     const idx=finalLocal<.47?0:Math.min(4,1+Math.floor(clamp((finalLocal-.47)/.53)*4));
+     // Five equal, readable scroll holds after the 'elsewhere.' lettering finishes.
+     // Scroll remains reversible; no timers or scroll hijacking.
+     const stageWindow=(1-.30)/5;
+     const idx=Math.min(4,Math.floor((finalLocal-.30)/stageWindow));
      if(!stageActivated || selected!==idx){stageActivated=true;selectOriginal(idx);}
    }
  }
  const i=p<.2?0:p<.49?1:p<.76?2:3; const [label,title,desc]=scenes[i];el('narrativeIndex').textContent=label;el('narrativeTitle').textContent=title;el('narrativeText').textContent=desc;drawTitle(i,p);el('stageSubhead').textContent=desc;el('stageStatus').textContent=['01 — PIPELINE IN MOTION','02 — FRICTION EMERGES','03 — OPENING THE PIPELINE','04 — COMMERCIAL FACTORS REVEALED'][i];
  }
- function current(){if(manual!==null)return manual;const r=story.getBoundingClientRect();return clamp(-r.top/Math.max(1,story.offsetHeight-window.innerHeight))}
+ // Preserve approximately the original scroll runway for the first three scenes.
+ // Reserve the additional distance for the five final-stage diagnostic holds.
+ const introDistance=()=>window.innerHeight*(window.matchMedia('(max-width:780px)').matches?2.2:2.6);
+ const totalDistance=()=>Math.max(1,story.offsetHeight-window.innerHeight);
+ const splitDistance=()=>Math.min(totalDistance()*.9,introDistance());
+ function timelineAtDistance(distance){
+   const total=totalDistance(),split=splitDistance(),d=Math.min(total,Math.max(0,distance));
+   return d<=split ? .76*d/split : .76+.24*(d-split)/Math.max(1,total-split);
+ }
+ function distanceAtTimeline(p){
+   const total=totalDistance(),split=splitDistance(),t=clamp(p);
+   return t<=.76 ? split*t/.76 : split+(total-split)*(t-.76)/.24;
+ }
+ function current(){if(manual!==null)return manual;const r=story.getBoundingClientRect();return timelineAtDistance(-r.top)}
  function request(){if(queued)return;queued=true;requestAnimationFrame(()=>{queued=false;render(current())})}
- document.querySelectorAll('[data-jump]').forEach(btn=>btn.addEventListener('click',()=>{manual=null;const p=+btn.dataset.jump;window.scrollTo({top:window.scrollY+story.getBoundingClientRect().top+p*Math.max(1,story.offsetHeight-window.innerHeight),behavior:'smooth'});}));
+ document.querySelectorAll('[data-jump]').forEach(btn=>btn.addEventListener('click',()=>{manual=null;const p=+btn.dataset.jump;window.scrollTo({top:window.scrollY+story.getBoundingClientRect().top+distanceAtTimeline(p),behavior:'smooth'});}));
  el('restart').addEventListener('click',()=>{manual=null;window.scrollTo({top:window.scrollY+story.getBoundingClientRect().top,behavior:'smooth'})});
  const stageData=[
  {name:'TARGET',question:'Are we focused on the right segments and buyers?',body:'Poor market focus or buyer fit may not become obvious until opportunities begin to stall. Test whether the right demand is entering the system.',levers:[0,1,2]},

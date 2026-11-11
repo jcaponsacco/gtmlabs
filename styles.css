@@ -148,7 +148,7 @@ p {
     rgba(0, 0, 0, .08) 34%,
     rgba(0, 0, 0, .35) 72%,
     rgba(0, 0, 0, .68) 100%);
-  opacity: 0;
+  opacity: 1; /* F27 nav gradient study: visible from initial load onward */
   transition: opacity .55s ease;
   pointer-events: none;
   z-index: -1;
@@ -1858,9 +1858,30 @@ button:disabled {
   --closing-primary-background: #f1d875;
   --closing-primary-ink: #14382e;
   --closing-outline: rgba(245,247,241,.62);
-  background: var(--closing-background);
+  background:
+    linear-gradient(90deg,
+      rgba(0,0,0,.92) 0%,
+      rgba(0,0,0,.82) 18%,
+      rgba(0,0,0,.58) 40%,
+      rgba(10,31,25,.24) 65%,
+      rgba(20,56,46,.00) 100%),
+    var(--closing-background);
   color: var(--closing-heading);
 }
+
+#contact.closing::before {
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:linear-gradient(90deg, rgba(0,0,0,.22) 0%, rgba(0,0,0,0) 58%);
+  opacity:.9;
+}
+#contact.closing .wrap {
+  position:relative;
+  z-index:1;
+}
+
 #contact.closing .eyebrow { color: var(--closing-accent); }
 #contact.closing h2 { color: var(--closing-heading); }
 #contact.closing p { color: var(--closing-copy); }
@@ -2204,3 +2225,19 @@ button:disabled {
  #investment .combined-investment{flex-direction:column;}
 }
 @media(prefers-reduced-motion:reduce){#investment .invest-choice{transition:none;transform:none;}}
+
+/* Study 06: four social channels, two-column layout prevents crowded text. */
+.footer-foundation-19 .footer-social-bar{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;}
+.footer-foundation-19 .footer-social-bar a{width:100%;padding:10px 8px;gap:7px;white-space:nowrap;}
+@media(max-width:530px){.footer-foundation-19 .footer-social-bar a{flex:initial;}}
+
+
+/* STUDY 07 / PIPELINE DISCOVERY — provide a readable scroll hold at each stage.
+   Initial animation retains its original scroll distance. The extra runway
+   belongs to TARGET → ENGAGE → DISCOVER → PROPOSE → WIN. */
+@media (prefers-reduced-motion: no-preference) {
+  #pipeline #engineStory.story { height:620vh; }
+  @media (max-width:780px) {
+    #pipeline #engineStory.story { height:580vh; }
+  }
+}

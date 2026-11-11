@@ -86,10 +86,31 @@ body.precision-energy-study .pipeline-shell,
 body.precision-energy-study .pipe-inner {
   box-shadow: 0 24px 60px rgba(11,34,26,.12);
 }
-body.precision-energy-study .reframe-section {
+/* Study 04 — radial black vignette originating inside the Reframe circle.
+   The perimeter stays forest green; the dark center feathers transparently
+   outward. Center aligns with .reframe-circle (79% 43% on desktop). */
+body.precision-energy-study #reframe.reframe-section {
   background:
-    radial-gradient(circle at 76% 30%, rgba(255,215,105,.07), transparent 18%),
-    linear-gradient(180deg, #12392f 0%, #153e32 100%);
+    radial-gradient(ellipse 64% 100% at 79% 43%,
+      rgba(0, 4, 3, .98) 0%,
+      rgba(0, 6, 4, .94) 17%,
+      rgba(0, 8, 6, .72) 34%,
+      rgba(0, 9, 7, .35) 55%,
+      rgba(0, 9, 7, 0) 83%),
+    #14382e;
+}
+@media (max-width: 850px) {
+  /* Keep the gradient origin attached to the shifted circle on tablet/mobile. */
+  body.precision-energy-study #reframe.reframe-section {
+    background:
+      radial-gradient(ellipse 120% 95% at 95% 35%,
+        rgba(0, 4, 3, .98) 0%,
+        rgba(0, 6, 4, .88) 19%,
+        rgba(0, 8, 6, .54) 40%,
+        rgba(0, 9, 7, .17) 65%,
+        rgba(0, 9, 7, 0) 87%),
+      #14382e;
+  }
 }
 body.precision-energy-study .reframe-title .maybe-word,
 body.precision-energy-study #inlineMaybe {

@@ -24,7 +24,7 @@
 .nav.floating::before { opacity: 1; }
 /* Secondary pages get the same overlay treatment already used on the homepage. */
 body:not(.home-page) .nav { isolation: isolate; }
-body:not(.home-page) .nav::before { content: ''; position:absolute; inset:0; border-radius:inherit; background:linear-gradient(180deg,transparent 0%,rgba(0,0,0,.08) 34%,rgba(0,0,0,.35) 72%,rgba(0,0,0,.68) 100%); opacity: 0; pointer-events:none; z-index:-1; transition:opacity .55s ease; }
+body:not(.home-page) .nav::before { content: ''; position:absolute; inset:0; border-radius:inherit; background:linear-gradient(180deg,transparent 0%,rgba(0,0,0,.08) 34%,rgba(0,0,0,.35) 72%,rgba(0,0,0,.68) 100%); opacity: 1; pointer-events:none; z-index:-1; transition:opacity .55s ease; }
 body:not(.home-page) .nav.floating::before { opacity:1; }
 .mobile-service-group { border-bottom:1px solid rgba(255,255,255,.15); }
 .mobile-links .mobile-service-group > summary { display:flex; align-items:center; justify-content:space-between; padding:14px; color:#fff; cursor:pointer; list-style:none; font-weight:650; }
@@ -42,3 +42,11 @@ body:not(.home-page) .nav.floating::before { opacity:1; }
 .nav-method-group .nav-service-no { color: #add0ee; }
 .nav-method-group .nav-service-item:hover .nav-service-arrow { color: #add0ee; }
 @media (max-width:850px) { .nav-method-group {display:none;} }
+
+/* HOME DROPDOWN STUDY 02 — shared first-navigation dropdown. */
+.nav-home-group .nav-service-panel { left: -28px; right: auto; width: min(350px, 85vw); max-height: min(680px, calc(100vh - 104px)); overflow-y: auto; scrollbar-width: thin; }
+.nav-home-group .nav-service-overline { color: #d7e6cf; }
+.nav-home-group .nav-service-no { color: #f1d875; }
+.nav-home-group .nav-service-item { padding-block: 10px; }
+.nav-home-group .nav-service-item:hover .nav-service-arrow { color: #f1d875; }
+@media (max-width:850px) { .nav-home-group { display: none; } }
