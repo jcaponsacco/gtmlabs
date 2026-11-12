@@ -1,0 +1,351 @@
+
+:root { color-scheme:dark; --navy:#071020; --navy2:#0b1930; --navy3:#0e2741; --cyan:#61d4fb; --cyan2:#a1ebff; --ink:#f0f7ff; --muted:#c4d7e8; --green:#45e1a2; --violet:#b78bff; --amber:#ffcd83; }
+* {box-sizing:border-box}
+html {scroll-behavior:smooth}
+body {margin:0; font-family:'DM Sans',Inter,ui-sans-serif,system-ui,sans-serif; color:var(--ink); background:#08111f}
+button {font:inherit; cursor:pointer}
+.shell {background:radial-gradient(ellipse at 49% 17%,#163556 0%,#09182b 44%,#071020 85%); padding:clamp(44px,6.8vw,100px) 0 clamp(38px,5vw,76px); overflow:hidden}
+.wide {max-width:1540px; width:calc(100% - clamp(28px,5.2vw,110px)); margin:auto}
+.intro {text-align:center; margin:0 auto clamp(25px,3vw,41px); max-width:1080px}
+.kicker {font-size:12px; color:#8cdbfa; letter-spacing:.22em; font-weight:800; text-transform:uppercase}
+h1 {font-size:clamp(35px,4.35vw,66px); letter-spacing:-.058em; line-height:1.07; margin:18px 0 14px; font-weight:800}
+.intro p {font-size:clamp(15px,1.24vw,18px); line-height:1.68; max-width:840px; margin:0 auto; color:#c4d6e7}
+.intro strong {color:#fff}
+.stage {position:relative; border:1px solid #315b79; border-radius:19px; overflow:hidden; background:linear-gradient(135deg,#0d2440,#09182e 58%,#0b1c32); box-shadow:0 30px 85px #01050c8c, inset 0 1px #b3e6ff1a}
+.diagram-top {display:flex; align-items:center; justify-content:space-between; gap:12px; padding:20px clamp(15px,2vw,34px) 10px}
+.diagram-top-title {font-size:clamp(14px,1.3vw,18px); color:#d9e9f7; font-weight:700; letter-spacing:.045em}
+.diagram-top-tag {color:#8fd8ed; border:1px solid #365d78; background:#103252; font-size:11px; font-weight:800; letter-spacing:.12em; border-radius:999px; padding:7px 10px; white-space:nowrap}
+.diagram-viewport {width:100%; overflow:hidden; padding:0 clamp(0px,0.8vw,12px) 8px; position:relative}
+.mobile-swipe {display:none;color:#9acfe7;font-size:12px;letter-spacing:.06em;padding:0 17px 8px;text-align:right}
+.diagram-viewport:after {content:""; position:absolute; pointer-events:none; inset:auto 10% 0; height:16px; background:radial-gradient(ellipse,#328bc027,transparent 74%)}
+.velocity-diagram {display:block; width:100%; height:auto; overflow:visible}
+.velocity-diagram .node {fill:#10304e; stroke:#5f94b7; stroke-width:1.5; transition:stroke .35s,fill .35s,filter .35s}
+.velocity-diagram .node-title {fill:#f4faff; font-size:18px; font-weight:750; text-anchor:middle}
+.velocity-diagram .node-sub {fill:#c4e1f2; font-size:13px; text-anchor:middle}
+.velocity-diagram .path {fill:none; stroke:#245b81; stroke-width:5; stroke-linecap:round}
+.velocity-diagram .flow {fill:none;stroke:#42cbfa;stroke-width:4;stroke-dasharray:4 19;stroke-linecap:round;filter:drop-shadow(0 0 4px #22b7fa);animation:dash 4.5s linear infinite;opacity:.48;transition:opacity .42s ease,filter .42s ease}
+.velocity-diagram .flow.return {stroke:var(--green);filter:drop-shadow(0 0 6px #45e1a2)}
+.velocity-diagram .flow.reprocessed {stroke:var(--violet);filter:drop-shadow(0 0 6px #b78bff)}
+@keyframes dash {to{stroke-dashoffset:-240}}
+.velocity-diagram .component {opacity:.68;transition:opacity .5s,filter .5s}
+.velocity-diagram .component.active {opacity:1;filter:drop-shadow(0 0 9px #4fc9ef66)}
+.velocity-diagram .flow.active {opacity:1;filter:drop-shadow(0 0 8px #43caff)}
+.velocity-diagram .flow.return.active {filter:drop-shadow(0 0 8px #54f6b1)}
+.velocity-diagram .flow.reprocessed.active {filter:drop-shadow(0 0 8px #bb9afa)}
+.velocity-diagram #humanGroup.active {filter:drop-shadow(0 0 12px #ffd28b9c)}
+.velocity-diagram #engineGroup.active .engine-ring {stroke:#74d6ff;filter:drop-shadow(0 0 12px #47b8ee)}
+.velocity-diagram .engine-ring {fill:none;stroke:#347da8;stroke-width:9;transition:stroke .5s,stroke-width .5s,filter .5s}
+.velocity-diagram .engine-core {fill:#0c2946;stroke:#60c5ee;stroke-width:2;transition:filter .5s}
+.velocity-diagram .human-line {stroke:#ffcb81;stroke-width:3;fill:none;stroke-dasharray:6 8;filter:drop-shadow(0 0 5px #f7bf6b)}
+.velocity-diagram .indicator {fill:#1d334b;stroke:#456783}
+.velocity-diagram .indicator.on {fill:#49e3ac;stroke:#a6ffdb;filter:drop-shadow(0 0 8px #4ff5b0)}
+.stage[data-cycle="2"] .engine-ring {stroke:#50c8e6;stroke-width:11;filter:drop-shadow(0 0 10px #43b8f5)}
+.stage[data-cycle="3"] .engine-ring {stroke:#a1dfff;stroke-width:13;filter:drop-shadow(0 0 16px #6ed9ff)}
+.stage[data-cycle="2"] .flow {animation-duration:3.1s}
+.stage[data-cycle="3"] .flow {animation-duration:2s}
+.stage[data-cycle="2"] .component,.stage[data-cycle="3"] .component {opacity:1}
+.guide {border-top:2px solid #4188ac; background:linear-gradient(112deg,#102e4a 0%,#0c2039 65%,#102944 100%); padding:clamp(18px,2.6vw,34px) clamp(20px,3.3vw,49px) clamp(18px,2.3vw,30px)}
+.guide-grid {display:grid;grid-template-columns:minmax(0,1fr) auto;gap:22px;align-items:center}
+.guide-kicker {text-transform:uppercase;letter-spacing:.18em;font-size:12px;font-weight:800;color:#8be3ff}
+.guide-title {font-size:clamp(22px,2.6vw,37px);font-weight:800;line-height:1.17;letter-spacing:-.025em;margin:8px 0 7px;min-height:1.2em}
+.guide-copy {color:#deeffb;font-size:clamp(15px,1.16vw,18px);line-height:1.6;max-width:860px;margin:0}
+.guide-count {color:#bedbeb;font-size:clamp(12px,1.15vw,16px);font-weight:700;letter-spacing:.07em;white-space:nowrap}
+.guide-bar {display:grid;grid-template-columns:repeat(9,minmax(0,1fr));gap:6px;margin:23px 0 20px}
+.guide-bar span {height:5px;background:#315675;border-radius:5px;transition:background .2s}
+.guide-bar span.done {background:#5ccdf4}
+.guide-bar span.current {background:#f3d276}
+.guide-controls {display:flex;justify-content:space-between;gap:20px;align-items:center;flex-wrap:wrap}
+.guide-hint {color:#abcee0;font-size:13px;line-height:1.45;max-width:630px}
+.guide-buttons {display:flex;flex-wrap:wrap;align-items:center;gap:9px}
+.control {border:1px solid #6389a5;background:#173a59;color:white;border-radius:9px;padding:12px 18px;font-weight:750;min-width:86px;transition:background .2s,transform .2s}
+.control:hover:not(:disabled) {background:#265677;transform:translateY(-1px)}
+.control:focus-visible {outline:3px solid #f4d47e;outline-offset:3px}
+.control:disabled {opacity:.36;cursor:not-allowed}
+.control.primary {background:#f0d77a;color:#142c3b;border-color:#f0d77a;min-width:108px}
+.control.primary:hover:not(:disabled) {background:#ffe79b}
+.support {display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center;margin:16px clamp(0px,1vw,10px) 0;color:#b6c9db;font-size:12px}
+.legend {display:flex;gap:18px;flex-wrap:wrap}
+.legend i {display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:7px}
+.disclaimer {color:#98b5cc;line-height:1.6}
+.transition {text-align:center;padding:clamp(45px,6vw,86px) 20px 8px}
+.transition .kicker {color:#90a9c7}
+.transition h2 {font-size:clamp(30px,4.1vw,54px);letter-spacing:-.052em;line-height:1.12;margin:12px auto;max-width:920px}
+.transition h2 em {font-style:normal;color:#bdabf3}
+.transition p {max-width:660px;margin:0 auto;color:#bed1e2;line-height:1.65;font-size:16px}
+.reduced *, .reduced *:before,.reduced *:after {animation:none!important;transition:none!important}
+@media(max-width:800px){
+ .wide {width:calc(100% - 26px)}
+ .diagram-top {padding:15px 18px 7px}
+ .diagram-viewport {overflow-x:auto;overscroll-behavior-x:contain;padding:0 0 9px;scrollbar-color:#5a86a5 #0a1d32;scrollbar-width:thin}
+ .velocity-diagram {min-width:930px}
+ .mobile-swipe {display:block}
+ .guide-grid {grid-template-columns:1fr;gap:6px}
+ .guide-count {font-size:12px}
+ .guide-controls {align-items:stretch}
+ .guide-hint {max-width:none}
+ .guide-buttons {width:100%}
+ .guide-buttons .control {flex:1;min-width:75px;padding:11px 8px}
+ .support {justify-content:center;text-align:center}
+}
+@media(max-width:490px){
+ .shell {padding-top:36px}
+ .intro {margin-bottom:25px}
+ .diagram-top-tag {display:none}
+ .guide {padding:20px 17px}
+ .guide-bar {margin:17px 0}
+ .guide-buttons {display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}
+ .guide-buttons .control {min-width:0;padding:12px 4px;font-size:12px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.velocity-diagram .flow {animation:none!important}}
+
+/* ====================================================================
+   STUDY 03 / SHARED REFINEMENTS — Nov 12 Chris/Joe comparison
+   Remove redundant system headings and cycle indicators;
+   place the flow legend adjacent to schematic; improve node readability.
+   ==================================================================== */
+.diagram-top{padding:0;min-height:0;display:none}
+.wide{max-width:1560px;width:calc(100% - clamp(24px,3.2vw,76px))}
+.shell{padding:clamp(30px,3.7vw,53px) 0 clamp(28px,3.8vw,55px)}
+.intro{margin-bottom:clamp(18px,2vw,28px)}
+h1{margin:12px 0 12px}
+.intro p{line-height:1.52}
+.stage{border-radius:17px}
+.legend{padding:15px 22px 10px;gap:12px 23px;font-size:12px;font-weight:600;color:#c6dcec;align-items:center}
+.legend .legend-label{font-size:10px;letter-spacing:.15em;font-weight:800;color:#91aac4;margin-right:2px}
+.legend i{width:10px;height:10px;box-shadow:0 0 11px currentColor}
+.diagram-viewport{padding:0 8px 5px}
+.velocity-diagram{width:100%}
+.velocity-diagram .component{opacity:.76}
+.velocity-diagram .node-title{font-weight:800}
+.velocity-diagram #humanGroup{opacity:1}
+.velocity-diagram #humanGroup text:first-of-type{font-size:19px}
+.velocity-diagram #humanGroup rect{stroke:#ffcb81;stroke-width:2.2}
+.guide-hint{font-size:12px}
+.guide-title{font-size:clamp(20px,1.85vw,28px)}
+.guide-copy{font-size:clamp(14px,1vw,16px)}
+.guide-bar{margin:14px 0}
+.control{padding:10px 13px;min-width:70px}
+.control.primary{min-width:94px}
+.support{justify-content:flex-end;margin-top:9px}
+.mobile-swipe{padding:8px 17px 0}
+@media (max-width:800px){.legend{padding:14px 16px 8px}.wide{width:calc(100% - 22px)}.velocity-diagram{min-width:920px}.guide-title{font-size:23px}.guide-copy{font-size:15px}}
+@media (prefers-reduced-motion:reduce){.velocity-diagram .flow{animation:none!important}}
+
+
+/* =============================================================
+   03A: MAXIMUM DIAGRAM WIDTH + COMPACT NARRATION BELOW
+   ============================================================= */
+.study-tabs{display:flex;justify-content:center;gap:8px;margin:0 auto 20px;flex-wrap:wrap}
+.study-tabs a{color:#aedcf5;text-decoration:none;font-size:12px;letter-spacing:.035em;font-weight:750;border:1px solid #325571;background:#10283d;border-radius:999px;padding:9px 16px}
+.study-tabs a:hover,.study-tabs a:focus-visible{background:#1c4a69}
+.study-03a .study-tabs a[href$="03A_Standalone.html"],.study-03b .study-tabs a[href$="03B_Standalone.html"]{background:#e9d078;color:#132d40;border-color:#e9d078}
+.study-03a .guide{padding:14px 23px 16px;background:linear-gradient(110deg,#102f4e,#10253c);border-top:1px solid #4188ac}
+.study-03a .guide-grid{grid-template-columns:minmax(0,1fr) auto;gap:12px}
+.study-03a .guide-title{margin:4px 0 3px;line-height:1.17}
+.study-03a .guide-copy{line-height:1.42;max-width:1000px}
+.study-03a .guide-bar{margin:10px 0 11px;gap:5px}
+.study-03a .guide-bar span{height:4px}
+.study-03a .guide-controls{gap:12px}
+.study-03a .guide-hint{max-width:340px}
+.study-03a .velocity-diagram{max-height: min(49vw,540px)}
+@media(min-width:1080px){.study-03a .guide{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px 22px;align-items:center}.study-03a .guide-grid{grid-column:1}.study-03a .guide-bar{grid-column:1;grid-row:2;margin:0}.study-03a .guide-controls{grid-column:2;grid-row:1 / 3;flex-direction:column;align-items:end;justify-content:center}.study-03a .guide-hint{display:none}}
+@media(max-width:800px){.study-03a .velocity-diagram{max-height:none}.study-03a .guide-grid{grid-template-columns:1fr}}
+
+/* =============================================================
+   03B: WALKTHROUGH LEFT / ANIMATION RIGHT
+   ============================================================= */
+.study-03b .stage{display:grid;grid-template-columns:minmax(290px,31%) minmax(0,1fr);align-items:stretch}
+.study-03b .guide{order:0;border:0;border-right:1px solid #37698c;background:linear-gradient(160deg,#153855,#0e2946 66%,#0a1c32);padding:clamp(20px,2.1vw,34px) clamp(16px,2vw,31px);display:flex;flex-direction:column;justify-content:center}
+.study-03b .diagram-art{order:1;min-width:0;display:flex;flex-direction:column;justify-content:center;overflow:hidden;padding:7px 0 12px}
+.study-03b .diagram-art .legend{padding:12px 12px 0 17px}
+.study-03b .diagram-art .diagram-viewport{padding:0}
+.study-03b .velocity-diagram{width:100%;height:auto}
+.study-03b .guide-grid{grid-template-columns:minmax(0,1fr);gap:12px}
+.study-03b .guide-count{font-size:12px}
+.study-03b .guide-title{font-size:clamp(22px,2vw,30px);margin:12px 0 12px;min-height:2.35em}
+.study-03b .guide-copy{font-size:clamp(14px,1vw,16px);line-height:1.55;min-height:6.2em}
+.study-03b .guide-bar{margin:25px 0 22px}
+.study-03b .guide-controls{align-items:stretch;gap:15px;display:flex;flex-direction:column}
+.study-03b .guide-hint{font-size:12px;line-height:1.5}
+.study-03b .guide-buttons{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));width:100%;gap:9px}
+.study-03b .control,.study-03b .control.primary{min-width:0;padding:12px 5px}
+.study-03b #humanGroup{opacity:1}
+@media(max-width:1000px){.study-03b .stage{grid-template-columns:minmax(260px,35%) minmax(0,1fr)}.study-03b .guide{padding:20px 17px}.study-03b .guide-copy{min-height:0}.study-03b .velocity-diagram{min-width:730px}.study-03b .diagram-art .diagram-viewport{overflow-x:auto}}
+@media(max-width:760px){.study-03b .stage{display:flex;flex-direction:column}.study-03b .diagram-art{order:0}.study-03b .guide{order:1;border-right:0;border-top:2px solid #4188ac}.study-03b .guide-title{min-height:0;font-size:24px}.study-03b .guide-copy{min-height:0}.study-03b .guide-buttons{grid-template-columns:repeat(4,minmax(0,1fr))}.study-03b .velocity-diagram{min-width:920px}}
+@media(max-width:440px){.study-03b .guide-buttons{gap:5px}.study-03b .control{font-size:12px}.study-03b .guide{padding:19px 15px}}
+
+
+/* =============================================================
+ STUDY 04 — PROGRESSIVE INTELLIGENCE ILLUMINATION
+ Three luminance levels: background / visited / current.
+ Change --quiet-opacity, --visited-opacity, --focus-glow to tune.
+ ============================================================= */
+.study-04 .velocity-diagram{
+  --quiet-opacity:.58;
+  --visited-opacity:.76;
+  --focus-glow:11px;
+}
+.study-04 .velocity-diagram .component,
+.study-04 .velocity-diagram .flow.component,
+.study-04 .velocity-diagram #humanGroup{
+ opacity:var(--quiet-opacity);
+ filter:none;
+ transition:opacity .44s ease,filter .44s ease;
+}
+.study-04 .velocity-diagram .component.visited,
+.study-04 .velocity-diagram #humanGroup.visited{opacity:var(--visited-opacity);filter:drop-shadow(0 0 3px #49b7e950)}
+.study-04 .velocity-diagram .flow.visited{opacity:.60;filter:drop-shadow(0 0 3px #49b7e980)}
+.study-04 .velocity-diagram .component.active,
+.study-04 .velocity-diagram #humanGroup.active{opacity:1;filter:drop-shadow(0 0 var(--focus-glow) #63d7ffb0)}
+.study-04 .velocity-diagram .flow.active{opacity:1;filter:drop-shadow(0 0 11px #39c7fff0)}
+.study-04 .velocity-diagram .flow.return.active{filter:drop-shadow(0 0 12px #45e1a2)}
+.study-04 .velocity-diagram .flow.reprocessed.active{filter:drop-shadow(0 0 12px #b78bff)}
+.study-04 .velocity-diagram #humanGroup.active{filter:drop-shadow(0 0 13px #ffcd83d9)}
+.study-04 .velocity-diagram #humanGroup.visited{filter:drop-shadow(0 0 4px #ffcd836e)}
+.study-04 .velocity-diagram #engineGroup.active .engine-ring{stroke:#86e3ff;stroke-width:11;filter:drop-shadow(0 0 13px #50d5ff)}
+.study-04 .velocity-diagram #engineGroup.visited .engine-ring{stroke:#4fa4ce;stroke-width:9;filter:drop-shadow(0 0 4px #3da1d080)}
+.study-04 .velocity-diagram #resultsGroup.active{filter:drop-shadow(0 0 13px #45e1a2d8)}
+.study-04 .velocity-diagram #resultsGroup.visited{filter:drop-shadow(0 0 4px #45e1a280)}
+.study-04 .velocity-diagram .flow{animation-play-state:paused;}
+.study-04 .velocity-diagram .flow.active{animation-play-state:running}
+.study-04 .velocity-diagram .flow.visited{animation-play-state:paused}
+/* During learning cycles, previous connections remain visible but
+   the outcome-to-analysis-to-core return is the focal route. */
+.study-04 .stage[data-cycle="2"] .component,
+.study-04 .stage[data-cycle="3"] .component{opacity:var(--visited-opacity)}
+.study-04 .stage[data-cycle="2"] .component.active,
+.study-04 .stage[data-cycle="3"] .component.active{opacity:1}
+.study-04 .stage[data-cycle="2"] #engineGroup.active .engine-ring{stroke:#7bd6f5;stroke-width:12}
+.study-04 .stage[data-cycle="3"] #engineGroup.active .engine-ring{stroke:#b1eeff;stroke-width:13}
+.study-04 .guide-title{transition:opacity .2s ease}
+.study-04 .focus-guide{display:flex;flex-wrap:wrap;gap:12px;margin-top:15px;color:#bfdded;font-size:11px;letter-spacing:.015em}
+.study-04 .focus-guide span{display:inline-flex;align-items:center;gap:6px}
+.study-04 .focus-guide i{display:inline-block;width:8px;height:8px;border-radius:50%;background:#68dcff;box-shadow:0 0 10px #68dcff}
+.study-04 .focus-guide i.focus-trail{background:#4b83aa;box-shadow:none}
+.study-04 .guide-bar span{height:6px}
+.study-04 .guide-bar span.current{box-shadow:0 0 8px #f3d27680}
+@media(prefers-reduced-motion:reduce){
+ .study-04 .velocity-diagram .component,.study-04 .velocity-diagram .flow{transition:none!important;animation:none!important}
+}
+
+/* STUDY 05 — SIGNAL KEY: align to the far right and lift above its prior baseline.
+   Tune these values if desired in VS Code: --signal-key-rise and --signal-key-right. */
+.study-05 .diagram-art{--signal-key-rise:10px;--signal-key-right:20px}
+.study-05 .diagram-art .legend{
+  width:100%;
+  justify-content:flex-end;
+  text-align:right;
+  padding:12px var(--signal-key-right) 0 8px;
+  transform:translateY(calc(-1 * var(--signal-key-rise)));
+}
+@media(max-width:1000px){
+  .study-05 .diagram-art .legend{column-gap:14px;row-gap:6px;}
+}
+@media(max-width:760px){
+  .study-05 .diagram-art{--signal-key-rise:0px;--signal-key-right:15px}
+  .study-05 .diagram-art .legend{justify-content:flex-end;text-align:right;padding-top:12px;}
+}
+
+
+/* STUDY 06 — SIGNAL KEY RHYTHM: tighter group spacing, preserve the
+   right-aligned position and Study 05 height. Adjustable CSS levers below. */
+.study-06 .diagram-art {
+  --signal-key-gap: 12px;
+  --signal-key-dot-gap: 5px;
+}
+.study-06 .diagram-art .legend {
+  column-gap: var(--signal-key-gap);
+  row-gap: 6px;
+}
+.study-06 .diagram-art .legend > span {
+  white-space: nowrap;
+}
+.study-06 .diagram-art .legend .legend-label {
+  margin-right: 0;
+}
+.study-06 .diagram-art .legend i {
+  margin-right: var(--signal-key-dot-gap);
+}
+@media (max-width: 1050px) {
+  .study-06 .diagram-art { --signal-key-gap: 9px; }
+  .study-06 .diagram-art .legend {justify-content: flex-end;}
+}
+@media (max-width: 760px) {
+  .study-06 .diagram-art .legend > span { white-space: normal; }
+}
+
+
+/* =============================================================
+   STUDY 07 — TWO-ROW SIGNAL KEY (reference-image layout)
+   Keep the legend in the upper-right; "SIGNAL KEY" at left and
+   two aligned columns of color-coded items on the right.
+   Values below are the only Study 07 layout settings to tune.
+   ============================================================= */
+.study-07 .diagram-art {
+  --signal-key-columns-gap: 24px;
+  --signal-key-rows-gap: 12px;
+  --signal-key-label-gap: 30px;
+}
+.study-07 .diagram-art .legend {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  gap: var(--signal-key-label-gap);
+  text-align: left;
+  flex-wrap: nowrap;
+  padding-top: 12px;
+}
+.study-07 .diagram-art .legend .legend-label {
+  flex: none;
+  padding-top: 1px;
+  white-space: nowrap;
+}
+.study-07 .diagram-art .legend-items {
+  display: grid;
+  grid-template-columns: max-content max-content;
+  column-gap: var(--signal-key-columns-gap);
+  row-gap: var(--signal-key-rows-gap);
+  justify-content: end;
+  align-items: center;
+}
+.study-07 .diagram-art .legend-items > span {
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--signal-key-dot-gap, 5px);
+  line-height: 1.35;
+}
+.study-07 .diagram-art .legend-items i {
+  flex: 0 0 10px;
+  margin: 0;
+}
+@media (max-width: 1180px) {
+  .study-07 .diagram-art {
+    --signal-key-label-gap: 15px;
+    --signal-key-columns-gap: 13px;
+  }
+  .study-07 .diagram-art .legend {font-size: 11px;}
+}
+@media (max-width: 920px) {
+  .study-07 .diagram-art .legend {
+    flex-wrap: wrap;
+    row-gap: 7px;
+    justify-content: flex-end;
+  }
+  .study-07 .diagram-art .legend .legend-label {width:100%;text-align:right;}
+}
+@media (max-width: 520px) {
+  .study-07 .diagram-art .legend {
+    padding-left: 12px;
+    padding-right: 14px;
+  }
+  .study-07 .diagram-art .legend-items {
+    grid-template-columns: max-content max-content;
+    column-gap: 12px;
+    row-gap: 9px;
+    font-size: 10px;
+  }
+}
+@media (max-width: 370px) {
+  .study-07 .diagram-art .legend-items {font-size: 9px;column-gap: 8px;}
+}
