@@ -1,0 +1,135 @@
+/* G2M Labs — Foundation 31 / Approved Hybrid Offer Cards
+   V30 simplified full-color cards + V29-style generous typography and original offer names.
+   Scoped to #services; keeps the decision system above and all destination links intact.
+*/
+#services.hybrid-offers{padding:clamp(36px,4vw,60px) 0 clamp(76px,7vw,112px);background:#fff;text-align:center}
+#services.hybrid-offers .difference-offers-lead{margin-bottom:clamp(31px,3.7vw,54px)}
+#services.hybrid-offers .hybrid-offer-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(16px,1.8vw,27px);align-items:stretch;text-align:left}
+#services.hybrid-offers .hybrid-offer{--card-bg:#e8f6ed;--icon-bg:#ccebd9;--icon-ink:#43836a;--accent:#43836a;position:relative;display:flex;flex-direction:column;min-width:0;min-height:clamp(355px,28vw,430px);padding:clamp(23px,2.35vw,37px);border-radius:clamp(23px,2.3vw,35px);background:var(--card-bg);border:1px solid rgba(67,131,106,.14);color:#0a1932;text-decoration:none;box-shadow:none;transition:transform .24s ease,box-shadow .24s ease,border-color .24s ease}
+#services.hybrid-offers .hybrid-offer--system{--card-bg:#e7f2fb;--icon-bg:#d0e6f7;--icon-ink:#3976aa;--accent:#3976aa;border-color:#cfe4f6}
+#services.hybrid-offers .hybrid-offer--integrated{--card-bg:#f0eafa;--icon-bg:#e2d5f2;--icon-ink:#7861a5;--accent:#7861a5;border-color:#e2d6f2}
+#services.hybrid-offers .hybrid-offer:hover{transform:translateY(-6px);box-shadow:0 18px 34px rgba(13,37,73,.13);border-color:color-mix(in srgb,var(--accent) 29%,transparent)}
+#services.hybrid-offers .hybrid-offer:focus-visible{outline:3px solid #2477ff;outline-offset:4px}
+#services.hybrid-offers .hybrid-offer-meta{display:block;margin:0 0 clamp(20px,2.2vw,30px);font-size:clamp(10px,.76vw,12px);font-weight:820;line-height:1.4;letter-spacing:.14em;color:var(--accent)}
+#services.hybrid-offers .hybrid-offer-body{display:grid;grid-template-columns:clamp(57px,5.1vw,81px) minmax(0,1fr) 27px;column-gap:clamp(14px,1.5vw,23px);align-items:start}
+#services.hybrid-offers .hybrid-offer-icon{width:clamp(57px,5.1vw,81px);height:clamp(57px,5.1vw,81px);display:grid;place-items:center;border-radius:50%;background:var(--icon-bg);color:var(--icon-ink);flex-shrink:0}
+#services.hybrid-offers .hybrid-offer-icon svg{display:block;width:58%;height:58%}
+#services.hybrid-offers .hybrid-offer-content{display:flex;flex-direction:column;min-width:0;gap:clamp(15px,1.65vw,24px);padding-top:4px}
+#services.hybrid-offers .hybrid-offer-heading{display:block;color:#101b33;font-weight:820;font-size:clamp(24px,2.08vw,35px);letter-spacing:-.043em;line-height:1.09;margin:0}
+#services.hybrid-offers .hybrid-offer-heading em{display:block;color:var(--accent);font-style:normal}
+#services.hybrid-offers .hybrid-offer-description{display:block;margin:0;font-size:clamp(15px,1.13vw,19px);line-height:1.52;color:#20314a}
+#services.hybrid-offers .hybrid-offer-chevron{color:#10213a;display:block;white-space:nowrap;font-size:clamp(24px,2.1vw,33px);line-height:1;transition:transform .2s ease}
+#services.hybrid-offers .hybrid-offer:hover .hybrid-offer-chevron{transform:translateX(5px)}
+#services.hybrid-offers .hybrid-offer-bottom{display:flex;flex-direction:column;gap:13px;margin-top:auto;padding-top:clamp(28px,3vw,46px)}
+#services.hybrid-offers .hybrid-offer-fit{display:block;font-size:clamp(10px,.76vw,12px);font-weight:820;letter-spacing:.075em;line-height:1.55;color:#445971;border-top:1px solid rgba(39,66,100,.17);padding-top:14px}
+#services.hybrid-offers .hybrid-offer-fit span{letter-spacing:.01em;font-weight:650;color:#334861}
+#services.hybrid-offers .hybrid-offer-action{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:13px;border-top:1px solid rgba(39,66,100,.13);font-size:clamp(14px,1.03vw,17px);font-weight:800;color:var(--accent)}
+#services.hybrid-offers .hybrid-offer-action span{font-size:22px;font-weight:500}
+#services.hybrid-offers .hybrid-offers-note{max-width:1050px;margin:26px auto 0;text-align:center;font-size:clamp(12px,.91vw,15px);line-height:1.55;color:#63746e}
+@media(max-width:1200px){#services.hybrid-offers .hybrid-offer{padding:20px;min-height:415px}#services.hybrid-offers .hybrid-offer-body{grid-template-columns:55px minmax(0,1fr) 21px;gap:12px}#services.hybrid-offers .hybrid-offer-icon{width:55px;height:55px}#services.hybrid-offers .hybrid-offer-heading{font-size:clamp(22px,2.3vw,29px)}#services.hybrid-offers .hybrid-offer-description{font-size:15px}}
+@media(max-width:880px){#services.hybrid-offers .hybrid-offer-grid{grid-template-columns:1fr;max-width:660px;margin-inline:auto;gap:20px}#services.hybrid-offers .hybrid-offer{min-height:320px;padding:28px}#services.hybrid-offers .hybrid-offer-body{grid-template-columns:70px minmax(0,1fr) 28px;gap:20px}#services.hybrid-offers .hybrid-offer-icon{width:70px;height:70px}#services.hybrid-offers .hybrid-offer-heading{font-size:clamp(27px,4.2vw,35px)}#services.hybrid-offers .hybrid-offer-description{font-size:17px}#services.hybrid-offers .hybrid-offer-bottom{padding-top:32px}}
+@media(max-width:480px){#services.hybrid-offers .hybrid-offer{padding:21px;min-height:325px;border-radius:23px}#services.hybrid-offers .hybrid-offer-body{grid-template-columns:54px minmax(0,1fr) 20px;gap:11px}#services.hybrid-offers .hybrid-offer-icon{width:54px;height:54px}#services.hybrid-offers .hybrid-offer-heading{font-size:clamp(23px,6.4vw,29px)}#services.hybrid-offers .hybrid-offer-description{font-size:15px}#services.hybrid-offers .hybrid-offer-meta{font-size:10px}#services.hybrid-offers .hybrid-offer-bottom{padding-top:28px}}
+@media(prefers-reduced-motion:reduce){#services.hybrid-offers .hybrid-offer,#services.hybrid-offers .hybrid-offer-chevron{transition:none}#services.hybrid-offers .hybrid-offer:hover{transform:none}}
+
+
+#services.hybrid-offers .hybrid-offers-cta{position:relative;margin:0 auto clamp(24px,2.8vw,38px);padding:clamp(28px,3vw,42px) clamp(28px,3.4vw,48px);border-radius:0;background:linear-gradient(180deg,rgba(245,246,244,.98) 0%,rgba(239,242,239,.94) 100%);box-shadow:0 16px 34px rgba(7,22,43,.10), inset 0 24px 34px rgba(255,255,255,.72);text-align:left;overflow:hidden}
+#services.hybrid-offers .hybrid-offers-cta::before{content:"";position:absolute;inset:0;background:radial-gradient(120% 78% at 50% -6%,rgba(255,255,255,.95) 0%,rgba(255,255,255,.18) 38%,rgba(255,255,255,0) 70%);pointer-events:none}
+#services.hybrid-offers .hybrid-offers-cta-eyebrow{position:relative;z-index:1;margin:0 0 10px;font-size:clamp(11px,.82vw,13px);font-weight:820;letter-spacing:.18em;line-height:1.4;color:#3976aa;text-transform:uppercase}
+#services.hybrid-offers .hybrid-offers-cta-title{position:relative;z-index:1;margin:0;color:#163228;font-size:clamp(42px,4.15vw,68px);font-weight:820;line-height:.98;letter-spacing:-.05em;max-width:18ch}
+#services.hybrid-offers .hybrid-offers-cta-title em{font-style:normal;color:#5b9b84}
+#services.hybrid-offers .hybrid-offers-cta-copy{position:relative;z-index:1;max-width:920px;margin:clamp(22px,2.4vw,30px) 0 0;font-size:clamp(19px,1.35vw,25px);line-height:1.6;color:#5e6e69}
+@media(max-width:880px){#services.hybrid-offers .hybrid-offers-cta{padding:28px 24px;margin-bottom:24px}#services.hybrid-offers .hybrid-offers-cta-title{font-size:clamp(34px,8vw,50px);max-width:none}#services.hybrid-offers .hybrid-offers-cta-copy{font-size:17px;line-height:1.6}}
+@media(max-width:480px){#services.hybrid-offers .hybrid-offers-cta{padding:24px 18px}#services.hybrid-offers .hybrid-offers-cta-title{font-size:clamp(30px,10vw,42px)}#services.hybrid-offers .hybrid-offers-cta-copy{font-size:16px}}
+
+/* ================================================================
+   STUDY 07 / HIGH-CONTRAST EDGE GRADIENT
+   Adjust --hover-edge, --hover-middle and --hover-far to tune the darkening.
+   The color family comes from --hover-rgb and changes per card.
+   ================================================================ */
+#services.hybrid-offers .hybrid-offer{
+  --hover-rgb:18,76,55;
+  --hover-edge:.97;
+  --hover-middle:.86;
+  --hover-far:.73;
+  isolation:isolate;
+  overflow:hidden;
+  transition:transform .24s ease,box-shadow .24s ease,border-color .24s ease,color .33s ease;
+}
+#services.hybrid-offers .hybrid-offer--leadership{--hover-rgb:18,76,55}
+#services.hybrid-offers .hybrid-offer--system{--hover-rgb:15,57,102}
+#services.hybrid-offers .hybrid-offer--integrated{--hover-rgb:57,34,104}
+#services.hybrid-offers .hybrid-offer::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  border-radius:inherit;
+  z-index:0;
+  opacity:0;
+  background:
+    radial-gradient(ellipse 125% 100% at 0% 0%,rgba(0,0,0,.38),transparent 69%),
+    radial-gradient(ellipse 105% 115% at 100% 100%,rgba(0,0,0,.29),transparent 75%),
+    linear-gradient(112deg,
+      rgba(var(--hover-rgb),var(--hover-edge)) 0%,
+      rgba(var(--hover-rgb),.93) 18%,
+      rgba(var(--hover-rgb),var(--hover-middle)) 49%,
+      rgba(var(--hover-rgb),var(--hover-far)) 100%);
+  transition:opacity .36s cubic-bezier(.2,.75,.28,1);
+}
+#services.hybrid-offers .hybrid-offer > *{position:relative;z-index:1}
+/* Invert all typography simultaneously as the dark field arrives. */
+#services.hybrid-offers .hybrid-offer .hybrid-offer-meta,
+#services.hybrid-offers .hybrid-offer .hybrid-offer-heading,
+#services.hybrid-offers .hybrid-offer .hybrid-offer-heading em,
+#services.hybrid-offers .hybrid-offer .hybrid-offer-description,
+#services.hybrid-offers .hybrid-offer .hybrid-offer-chevron,
+#services.hybrid-offers .hybrid-offer .hybrid-offer-fit,
+#services.hybrid-offers .hybrid-offer .hybrid-offer-fit span,
+#services.hybrid-offers .hybrid-offer .hybrid-offer-action{
+  transition:color .32s ease;
+}
+#services.hybrid-offers .hybrid-offer .hybrid-offer-icon{
+  transition:background-color .32s ease,color .32s ease,box-shadow .32s ease;
+}
+@media(hover:hover){
+  #services.hybrid-offers .hybrid-offer:hover::before{opacity:1}
+}
+#services.hybrid-offers .hybrid-offer:focus-visible::before{opacity:1}
+@media(hover:hover){
+  #services.hybrid-offers .hybrid-offer:hover .hybrid-offer-meta,
+  #services.hybrid-offers .hybrid-offer:hover .hybrid-offer-heading,
+  #services.hybrid-offers .hybrid-offer:hover .hybrid-offer-heading em,
+  #services.hybrid-offers .hybrid-offer:hover .hybrid-offer-description,
+  #services.hybrid-offers .hybrid-offer:hover .hybrid-offer-chevron,
+  #services.hybrid-offers .hybrid-offer:hover .hybrid-offer-fit,
+  #services.hybrid-offers .hybrid-offer:hover .hybrid-offer-fit span,
+  #services.hybrid-offers .hybrid-offer:hover .hybrid-offer-action{color:#fff}
+  #services.hybrid-offers .hybrid-offer:hover .hybrid-offer-icon{
+    color:#fff;background:rgba(255,255,255,.15);
+    box-shadow:inset 0 0 0 1px rgba(255,255,255,.28)
+  }
+}
+#services.hybrid-offers .hybrid-offer:focus-visible .hybrid-offer-meta,
+#services.hybrid-offers .hybrid-offer:focus-visible .hybrid-offer-heading,
+#services.hybrid-offers .hybrid-offer:focus-visible .hybrid-offer-heading em,
+#services.hybrid-offers .hybrid-offer:focus-visible .hybrid-offer-description,
+#services.hybrid-offers .hybrid-offer:focus-visible .hybrid-offer-chevron,
+#services.hybrid-offers .hybrid-offer:focus-visible .hybrid-offer-fit,
+#services.hybrid-offers .hybrid-offer:focus-visible .hybrid-offer-fit span,
+#services.hybrid-offers .hybrid-offer:focus-visible .hybrid-offer-action{color:#fff}
+#services.hybrid-offers .hybrid-offer:focus-visible .hybrid-offer-icon{
+  color:#fff;background:rgba(255,255,255,.15);
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.28)
+}
+@media(prefers-reduced-motion:reduce){
+  #services.hybrid-offers .hybrid-offer::before,
+  #services.hybrid-offers .hybrid-offer .hybrid-offer-meta,
+  #services.hybrid-offers .hybrid-offer .hybrid-offer-heading,
+  #services.hybrid-offers .hybrid-offer .hybrid-offer-heading em,
+  #services.hybrid-offers .hybrid-offer .hybrid-offer-description,
+  #services.hybrid-offers .hybrid-offer .hybrid-offer-chevron,
+  #services.hybrid-offers .hybrid-offer .hybrid-offer-fit,
+  #services.hybrid-offers .hybrid-offer .hybrid-offer-fit span,
+  #services.hybrid-offers .hybrid-offer .hybrid-offer-action,
+  #services.hybrid-offers .hybrid-offer .hybrid-offer-icon{transition:none}
+}
