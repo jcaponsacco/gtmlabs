@@ -199,7 +199,7 @@ addEventListener('scroll',request,{passive:true});addEventListener('resize',requ
      if(!stageActivated || selected!==idx){stageActivated=true;selectOriginal(idx);}
    }
  }
- const i=p<.2?0:p<.49?1:p<.76?2:3; const [label,title,desc]=scenes[i];el('narrativeIndex').textContent=label;el('narrativeTitle').textContent=title;el('narrativeText').textContent=desc;drawTitle(i,p);el('stageSubhead').textContent=desc;el('stageStatus').textContent=['01 — PIPELINE IN MOTION','02 — FRICTION EMERGES','03 — OPENING THE PIPELINE','04 — COMMERCIAL FACTORS REVEALED'][i];
+ const i=p<.2?0:p<.49?1:p<.76?2:3; const [label,title,desc]=scenes[i];drawTitle(i,p);el('stageSubhead').textContent=desc;el('stageStatus').textContent=['01 — PIPELINE IN MOTION','02 — FRICTION EMERGES','03 — OPENING THE PIPELINE','04 — COMMERCIAL FACTORS REVEALED'][i];
  }
  // Preserve approximately the original scroll runway for the first three scenes.
  // Reserve the additional distance for the five final-stage diagnostic holds.

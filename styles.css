@@ -2257,3 +2257,6 @@ button:disabled {
   border-color:rgba(193,161,238,.36);
   box-shadow:0 0 17px rgba(152,108,218,.12);
 }
+
+/* FOUNDATION 34 / PIPELINE CORRECTION — lower duplicate copy removed. */
+#pipeline .content{justify-content:flex-end;}

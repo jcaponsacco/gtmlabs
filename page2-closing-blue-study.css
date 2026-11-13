@@ -1,0 +1,38 @@
+/* G2M Labs | Page 2 Closing Study 01 | Blue with distinct purple hover
+   The rest of Foundation 33 is unchanged. Tuning controls under :root. */
+:root{
+  --oc-blue-border:rgba(53,168,244,.58);
+  --oc-purple-1:#45257f;
+  --oc-purple-2:#29164f;
+  --oc-purple-border:rgba(185,135,255,.95);
+  --oc-hover-speed:.36s;
+}
+.g2m-outcome-close{position:relative;isolation:isolate;overflow:hidden;background:radial-gradient(ellipse at 86% -12%,rgba(31,120,226,.49),transparent 44%),radial-gradient(ellipse at 12% 88%,rgba(8,46,93,.5),transparent 52%),linear-gradient(122deg,#041125 0%,#061a35 52%,#021025 100%);color:#f8faff;padding:clamp(65px,7.3vw,112px) 0 clamp(72px,7vw,110px);border-top:1px solid rgba(87,159,232,.22);border-bottom:1px solid rgba(87,159,232,.18)}
+.g2m-outcome-close::before{content:"";position:absolute;z-index:-1;pointer-events:none;inset:-12% -17% auto 38%;height:400px;transform:rotate(-10deg);border-radius:50%;border-bottom:1px solid rgba(47,167,255,.38);box-shadow:0 32px 72px -65px #4eb5ff,0 85px 95px -89px #75caff}
+.g2m-outcome-close::after{content:"";position:absolute;z-index:-1;pointer-events:none;inset:auto -14% -48% 14%;height:65%;background:radial-gradient(ellipse at center,rgba(8,76,143,.28),transparent 66%)}
+.g2m-oc-inner{width:min(1440px,calc(100% - 2 * clamp(25px,5.5vw,88px)));margin:0 auto}
+.g2m-oc-heading{max-width:1150px}
+.g2m-oc-kicker{display:flex;align-items:center;gap:23px;text-transform:uppercase;color:#eff5ff;font-weight:760;letter-spacing:.19em;font-size:clamp(11px,.92vw,14px)}
+.g2m-oc-rule{display:inline-block;flex:0 0 47px;width:47px;height:3px;background:#4bc9ff;box-shadow:0 0 14px rgba(75,201,255,.35)}
+.g2m-oc-heading h2{font-family:inherit;color:#f4f8ff;font-weight:780;font-size:clamp(41px,5vw,79px);line-height:1.04;letter-spacing:-.057em;margin:clamp(25px,3.1vw,43px) 0 23px;max-width:1100px}
+.g2m-oc-heading h2 span{color:#f4f8ff}
+.g2m-oc-heading>p{font-size:clamp(17px,1.6vw,24px);line-height:1.52;color:#cfdeef;max-width:930px;margin:0}
+.g2m-oc-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(15px,1.5vw,26px);margin-top:clamp(35px,4.1vw,62px)}
+.g2m-oc-card{position:relative;isolation:isolate;overflow:hidden;min-height:clamp(220px,18vw,275px);padding:clamp(25px,2.15vw,36px);border:1px solid var(--oc-blue-border);border-radius:17px;background:linear-gradient(155deg,rgba(20,77,130,.47),rgba(7,35,71,.55));box-shadow:inset 0 1px 0 rgba(164,223,255,.14),0 14px 34px rgba(0,8,25,.16);transition:border-color var(--oc-hover-speed) ease,box-shadow var(--oc-hover-speed) ease,transform var(--oc-hover-speed) ease}
+.g2m-oc-card::before{content:"";z-index:-1;position:absolute;inset:0;background:radial-gradient(ellipse at 12% 0%,rgba(171,109,255,.36),transparent 64%),linear-gradient(140deg,var(--oc-purple-1),var(--oc-purple-2));opacity:0;transition:opacity var(--oc-hover-speed) ease}
+.g2m-oc-card:hover{transform:translateY(-7px);border-color:var(--oc-purple-border);box-shadow:inset 0 1px 0 rgba(230,192,255,.32),0 20px 44px rgba(38,9,77,.4),0 0 20px rgba(139,72,237,.2)}
+.g2m-oc-card:hover::before{opacity:1}
+.g2m-oc-card-top{display:flex;gap:clamp(16px,1.3vw,24px);align-items:center;margin-bottom:17px}
+.g2m-oc-icon{width:clamp(54px,5vw,76px);height:clamp(54px,5vw,76px);flex:0 0 auto;display:grid;place-items:center;border:1px solid rgba(38,170,252,.75);border-radius:13px;color:#3ec6ff;background:linear-gradient(155deg,rgba(16,104,169,.52),rgba(9,45,88,.75));box-shadow:inset 0 0 18px rgba(19,140,255,.12);transition:background var(--oc-hover-speed),border-color var(--oc-hover-speed),color var(--oc-hover-speed)}
+.g2m-oc-icon svg{width:48%;height:48%}
+.g2m-oc-card:hover .g2m-oc-icon{border-color:#b68bff;color:#ead4ff;background:linear-gradient(160deg,rgba(137,73,217,.72),rgba(72,30,132,.82))}
+.g2m-oc-card h3{font-size:clamp(21px,1.85vw,29px);font-weight:750;letter-spacing:-.035em;line-height:1.13;color:#f6faff;margin:0}
+.g2m-oc-card p{margin:0 0 0 clamp(0px,2.2vw,33px);color:#d1e2f4;font-size:clamp(16px,1.35vw,20px);line-height:1.5;max-width:330px;transition:color var(--oc-hover-speed)}
+.g2m-oc-card:hover p{color:#f4eaff}
+.g2m-oc-promise{display:flex;gap:clamp(16px,2.6vw,46px);align-items:center;margin:clamp(50px,5vw,78px) auto 0;text-align:center}
+.g2m-oc-promise-rule{height:1px;flex:1;min-width:20px;background:linear-gradient(90deg,transparent,#4bc9ff,transparent);opacity:.66}
+.g2m-oc-promise p{flex:0 1 auto;margin:0;color:#eef5ff;font-size:clamp(19px,2.2vw,31px);line-height:1.48;font-weight:450;letter-spacing:-.026em}
+.g2m-oc-promise strong{font-weight:750;color:#53c6ff}
+@media(max-width:1080px){.g2m-oc-card-top{flex-direction:column;align-items:start}.g2m-oc-card p{margin-left:0}.g2m-oc-cards{gap:12px}.g2m-oc-card{padding:22px}}
+@media(max-width:730px){.g2m-oc-cards{grid-template-columns:1fr}.g2m-oc-card{min-height:auto}.g2m-oc-card-top{flex-direction:row}.g2m-oc-promise-rule{display:none}.g2m-oc-promise{text-align:left}.g2m-oc-heading h2{font-size:clamp(36px,9vw,58px)}.g2m-oc-card p{max-width:none}}
+@media(prefers-reduced-motion:reduce){.g2m-oc-card,.g2m-oc-card::before,.g2m-oc-icon{transition:none}.g2m-oc-card:hover{transform:none}}
