@@ -26,13 +26,13 @@ const phases = [
  {title:'Results return as stronger intelligence',copy:'Outcomes travel back through AI-supported analysis (green), then interpreted learning strengthens the intelligence core (purple).',focus:['resultsGroup','resultsFlow','analysisGroup','learningFlow','engineGroup'],feedback:true},
  {title:'Cycle 1 — Establish direction',copy:'An initial round of evidence, interpretation and human judgment produces an accountable commercial action.',focus:['humanGroup','decisionFlow','decisionGroup','executionFlow','executionGroup'],cycle:1},
  {title:'Cycle 2 — Build understanding',copy:'Results flow back into analysis and the core. Earlier decisions and outcomes now provide more context for the next choice.',focus:['resultsGroup','resultsFlow','analysisGroup','learningFlow','engineGroup'],cycle:2,feedback:true},
- {title:'Cycle 3 — Accelerate response',copy:'The accumulated context supports clearer decisions and a more coordinated response. The increasing pace is illustrative, not a performance promise.',focus:['engineGroup','humanGroup','decisionFlow','decisionGroup','executionFlow','executionGroup'],cycle:3}
+ {title:'Cycle 3 — The complete system is running',copy:'All connections now move together: market signals, analysis, the intelligence core, human judgment, decisions, execution, and the feedback loops. The system keeps learning as it operates. Motion is illustrative, not a performance promise.',focus:['engineGroup','humanGroup','decisionFlow','decisionGroup','executionFlow','executionGroup'],cycle:3}
 ];
 const visualIds=['sources','signalsFlow','analysisGroup','analysisFlow','engineGroup','humanGroup','decisionFlow','decisionGroup','executionFlow','executionGroup','resultsGroup','resultsFlow','learningFlow'];
 const elements = new Map(visualIds.map(id => [id,document.getElementById(id)]));
 let index=0,playing=false,timer=null,started=false;
 const clearTimer=()=>{if(timer!==null)clearTimeout(timer);timer=null};
-function updatePlay(){play.textContent=playing?'Pause':'Play';play.setAttribute('aria-label',playing?'Pause walkthrough':'Play walkthrough');stage.classList.toggle('reduced',reduced || !playing)}
+function updatePlay(){play.textContent=playing?'Pause':'Play';play.setAttribute('aria-label',playing?'Pause walkthrough':'Play walkthrough');stage.classList.toggle('reduced',reduced || document.hidden || (!playing && index !== phases.length-1))}
 function stop(){playing=false;clearTimer();updatePlay()}
 function start(){if(reduced)return;playing=true;updatePlay();schedule()}
 function schedule(){clearTimer();if(!playing)return;timer=setTimeout(()=>{if(index<phases.length-1){index++;render();schedule()}else stop()},index<6?4000:4900)}
@@ -49,7 +49,7 @@ function render(){
  title.textContent=phase.title;copy.textContent=phase.copy;
  kicker.textContent=index<6?`GUIDED WALKTHROUGH · STEP ${String(index+1).padStart(2,'0')} OF 06`:'THE LEARNING LOOP';
  count.textContent=`${String(index+1).padStart(2,'0')} / 09`;
- hint.textContent=index<6?'Select Back or Next to explore at your own pace. Manual navigation pauses autoplay.':'Each cycle adds context. Select Replay to see how the intelligence is built.';
+ hint.textContent=index<6?'Current stage is yellow; completed stages stay bright white. Back reverses the trail; Replay resets it.':index===8?'The complete system is now running. Yellow marks the current focus; white paths remain active.':'Completed stages stay white; the current focus is yellow. Select Replay to start again.';
  stage.dataset.cycle=String(phase.cycle||0);
  const visited=new Set();
  for(let i=0;i<index;i++)for(const id of phases[i].focus)visited.add(id);
@@ -66,6 +66,7 @@ function render(){
  dots.forEach((dot,n)=>{dot.classList.toggle('done',n<index);dot.classList.toggle('current',n===index)});
  back.disabled=index===0;next.disabled=index===phases.length-1;
  scrollIntoFocus();
+ updatePlay();
 }
 function move(delta){stop();index=Math.min(phases.length-1,Math.max(0,index+delta));render()}
 back.addEventListener('click',()=>move(-1));

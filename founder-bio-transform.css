@@ -1,0 +1,419 @@
+/* V36.3 / FOUNDER BIO TRANSFORMATION — isolated from site theme. */
+#people {
+      --paper: #e7ebdf;
+      --card: #f8f9f3;
+      --ink: #16392f;
+      --body: #5f7068;
+      --line: #d5ded2;
+      --mint: #e1f0b9;
+      --motion: 640ms;
+      --motion-ease: cubic-bezier(.22, 1, .36, 1);
+      --card-height: 750px;
+      --portrait-default: 52%;
+      --header-expanded: 28%;
+      --portrait-expanded: 37%;
+    }
+#people .page {
+      max-width: 1420px;
+      margin: 0 auto;
+      padding: clamp(25px, 5vw, 76px) clamp(18px, 4.2vw, 62px) 70px;
+    }
+#people .eyebrow {
+      margin: 0 0 13px;
+      text-transform: uppercase;
+      letter-spacing: .23em;
+      color: #477762;
+      font-size: 11px;
+      font-weight: 800;
+    }
+#people .heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 24px;
+      margin-bottom: 30px;
+    }
+#people .heading h1 {
+      max-width: 800px;
+      font-size: clamp(32px, 4.3vw, 64px);
+      line-height: 1.02;
+      letter-spacing: -.055em;
+      margin: 0;
+      font-weight: 800;
+    }
+#people .heading h1 em { font-style: normal; color: #6a8979; }
+#people .heading p {
+      max-width: 290px;
+      margin: 0 0 4px;
+      line-height: 1.5;
+      color: var(--body);
+      font-size: 14px;
+    }
+#people .founder-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 26px;
+      align-items: stretch;
+    }
+#people .founder {
+      position: relative;
+      height: var(--card-height);
+      min-width: 0;
+      overflow: hidden;
+      background: var(--card);
+      border: 1px solid #d9e0d5;
+      box-shadow: 0 15px 37px #153c3010;
+      isolation: isolate;
+    }
+#people .founder-head {
+      position: absolute;
+      inset: 0 0 auto 0;
+      height: 100%;
+      overflow: hidden;
+      z-index: 2;
+      background: var(--card);
+      transition: height var(--motion) var(--motion-ease);
+    }
+#people .founder.is-expanded .founder-head {
+      height: var(--header-expanded);
+    }
+#people .portrait {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: var(--portrait-default);
+      overflow: hidden;
+      transition:
+        width var(--motion) var(--motion-ease),
+        height var(--motion) var(--motion-ease);
+    }
+#people .founder.is-expanded .portrait {
+      width: var(--portrait-expanded);
+      height: 100%;
+    }
+#people .portrait.chris {
+      background:
+        radial-gradient(circle at 78% 88%, #8ba7b5 0, transparent 43%),
+        linear-gradient(141deg, #102d3e 0%, #285d85 57%, #5394c5 100%);
+    }
+#people .portrait.joe {
+      background:
+        radial-gradient(circle at 78% 90%, #a9cba5 0, transparent 45%),
+        linear-gradient(141deg, #123c35 0%, #296f5d 60%, #62a48f 100%);
+    }
+#people .portrait::before, #people .portrait::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      aspect-ratio: 1;
+      left: 50%;
+      top: 48%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+#people .portrait::before {
+      width: 90%;
+      border: 1px solid #f4ffff42;
+      box-shadow: 0 0 0 53px #e1eeff09, 0 0 0 100px #e1eeff06;
+      transition: width var(--motion) var(--motion-ease);
+    }
+#people .portrait::after {
+      width: 71%;
+      border: 1px solid #f4ffff24;
+    }
+#people .portrait-monogram {
+      position: absolute;
+      top: 47%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-weight: 800;
+      font-size: clamp(145px, 19vw, 270px);
+      letter-spacing: -.115em;
+      line-height: 1;
+      color: #e4ecef;
+      white-space: nowrap;
+      transition: font-size var(--motion) var(--motion-ease);
+      z-index: 1;
+    }
+#people .portrait-monogram i {
+      font-style: normal;
+      color: var(--mint);
+      letter-spacing: 0;
+    }
+#people .founder.is-expanded .portrait-monogram {
+      font-size: clamp(66px, 8vw, 112px);
+    }
+#people .portrait-caption {
+      position: absolute;
+      bottom: 20px;
+      left: 25px;
+      right: 25px;
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      color: #f1fbfb;
+      font-size: 10px;
+      letter-spacing: .2em;
+      font-weight: 800;
+      z-index: 2;
+      transition: opacity 200ms ease;
+    }
+#people .founder.is-expanded .portrait-caption { opacity: 0; }
+#people .identity {
+      position: absolute;
+      left: 0;
+      top: var(--portrait-default);
+      width: 100%;
+      height: calc(100% - var(--portrait-default));
+      padding: clamp(22px, 2.5vw, 34px);
+      overflow: hidden;
+      transition:
+        top var(--motion) var(--motion-ease),
+        left var(--motion) var(--motion-ease),
+        width var(--motion) var(--motion-ease),
+        height var(--motion) var(--motion-ease),
+        padding var(--motion) var(--motion-ease);
+    }
+#people .founder.is-expanded .identity {
+      top: 0;
+      left: var(--portrait-expanded);
+      width: calc(100% - var(--portrait-expanded));
+      height: 100%;
+      padding: clamp(14px, 2vw, 28px);
+    }
+#people .founder-index {
+      display: block;
+      color: #477b66;
+      letter-spacing: .2em;
+      font-size: 10px;
+      font-weight: 850;
+      margin-bottom: 13px;
+      white-space: nowrap;
+      transition: margin var(--motion) var(--motion-ease);
+    }
+#people .identity h2 {
+      margin: 0 0 13px;
+      color: #123d30;
+      font-size: clamp(31px, 3.5vw, 50px);
+      letter-spacing: -.068em;
+      line-height: 1.04;
+      font-weight: 820;
+      transition:
+        font-size var(--motion) var(--motion-ease),
+        margin var(--motion) var(--motion-ease);
+    }
+#people .identity h2 span { display: block; }
+#people .lead {
+      margin: 0;
+      font-size: clamp(15px, 1.4vw, 19px);
+      font-weight: 720;
+      line-height: 1.43;
+      color: #244538;
+      transition: font-size var(--motion) var(--motion-ease);
+    }
+#people .identity .summary {
+      margin: 13px 0 0;
+      color: var(--body);
+      font-size: clamp(12px, 1.05vw, 14px);
+      line-height: 1.65;
+      transition: opacity 200ms ease;
+    }
+#people .founder.is-expanded .identity .founder-index { margin-bottom: 10px; font-size: 9px; }
+#people .founder.is-expanded .identity h2 {
+      font-size: clamp(23px, 2.65vw, 36px);
+      margin-bottom: 9px;
+    }
+#people .founder.is-expanded .identity .lead { font-size: clamp(11px, 1.1vw, 14px); }
+#people .founder.is-expanded .identity .summary { opacity: 0; }
+#people .biography {
+      position: absolute;
+      z-index: 1;
+      left: 0;
+      right: 0;
+      top: var(--header-expanded);
+      bottom: 0;
+      border-top: 1px solid var(--line);
+      background: #f5f7f0;
+      opacity: 0;
+      transform: translateY(26px);
+      visibility: hidden;
+      pointer-events: none;
+      transition:
+        opacity 330ms ease,
+        transform 560ms var(--motion-ease),
+        visibility 0s linear 560ms;
+    }
+#people .founder.is-expanded .biography {
+      opacity: 1;
+      transform: translateY(0);
+      visibility: visible;
+      pointer-events: auto;
+      transition:
+        opacity 320ms ease 220ms,
+        transform 560ms var(--motion-ease),
+        visibility 0s;
+    }
+#people .bio-scroll {
+      position: absolute;
+      inset: 0;
+      padding: clamp(26px, 3.4vw, 44px);
+      overflow: auto;
+      overscroll-behavior: contain;
+    }
+#people .bio-label {
+      color: #4b7966;
+      font-size: 11px;
+      font-weight: 850;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+    }
+#people .bio-scroll p {
+      font-size: clamp(14px, 1.25vw, 17px);
+      line-height: 1.74;
+      color: #53695e;
+      max-width: 55ch;
+    }
+#people .bio-note {
+      border-top: 1px solid #cbd9ca;
+      margin-top: 24px;
+      padding-top: 20px;
+      color: #62796b;
+      font-size: 12px;
+      line-height: 1.65;
+    }
+#people .bio-actions { display: flex; gap: 11px; flex-wrap: wrap; margin-top: 23px; }
+#people .bio-actions .link-stub {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      color: #2c614b;
+      border: 1px solid #cadacb;
+      padding: 10px 12px;
+      border-radius: 3px;
+      font-size: 12px;
+      font-weight: 750;
+    }
+#people .bio-toggle {
+      position: absolute;
+      z-index: 5;
+      left: clamp(22px, 2.5vw, 34px);
+      bottom: 17px;
+      color: #174e3b;
+      background: transparent;
+      border: 0;
+      border-top: 1px solid #cddbcf;
+      padding: 15px 5px 6px 0;
+      font-size: 13px;
+      font-weight: 800;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      transition: color 150ms ease;
+    }
+#people .bio-toggle .arrow { transition: transform 280ms ease; font-size: 20px; }
+#people .bio-toggle:hover { color: #41846b; }
+#people .bio-toggle:hover .arrow { transform: translateX(5px); }
+#people .founder.is-expanded .bio-toggle {
+      left: auto;
+      right: 23px;
+      bottom: 18px;
+      padding: 11px 14px;
+      border: 1px solid #c6d5c8;
+      border-radius: 5px;
+      background: #edf3e9;
+      box-shadow: 0 3px 12px #153a3017;
+      font-size: 12px;
+    }
+#people .founder.is-expanded .bio-toggle .arrow { transform: rotate(180deg); }
+#people .bio-toggle:focus-visible { outline: 3px solid #a2b85f; outline-offset: 3px; }
+#people .shared {
+      border-top: 1px solid #cbd7c9;
+      padding-top: 22px;
+      margin-top: 25px;
+      color: #4e6c5e;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+#people .shared strong { color: #244c3d; }
+#people .study-note {
+      margin-top: 20px;
+      font-size: 12px;
+      color: #62786b;
+      line-height: 1.6;
+    }
+@media  (max-width: 1080px) {#people { --card-height: 690px; --header-expanded: 30%; }
+#people .heading { align-items: start; flex-direction: column; }
+#people .founder-grid { gap: 16px; }
+#people .founder.is-expanded .identity .lead { font-size: 12px; }
+#people .founder.is-expanded .identity h2 { font-size: clamp(22px, 2.7vw, 31px); }}
+@media  (max-width: 760px) {#people { --card-height: 700px; --header-expanded: 27%; }
+#people .founder-grid { grid-template-columns: 1fr; max-width: 570px; margin-inline: auto; }
+#people .portrait-monogram { font-size: clamp(160px, 35vw, 245px); }
+#people .founder.is-expanded .portrait-monogram { font-size: clamp(65px, 18vw, 100px); }
+#people .founder.is-expanded .identity h2 { font-size: clamp(26px, 6vw, 35px); }
+#people .founder.is-expanded .identity .lead { font-size: clamp(12px, 3vw, 15px); }}
+@media  (max-width: 420px) {#people { --card-height: 650px; --header-expanded: 29%; --portrait-expanded: 35%; }
+#people .founder.is-expanded .identity { padding: 13px 12px; }
+#people .founder.is-expanded .identity h2 { font-size: 24px; }
+#people .founder.is-expanded .identity .lead { font-size: 11px; }
+#people .founder.is-expanded .identity .founder-index { font-size: 8px; }
+#people .portrait-caption { font-size: 8px; left: 15px; right: 15px; }
+#people .bio-scroll { padding: 24px; }}
+@media  (prefers-reduced-motion: reduce) {#people *, #people *::before, #people *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }}
+#people .bio-actions .link-stub { text-decoration:none; background:#edf3e9; }
+#people .bio-actions .link-stub:hover { background:#e2eddf; border-color:#7aa58d; }
+#people .bio-actions .link-stub:focus-visible { outline:3px solid #a2b85f; outline-offset:2px; }
+#people .bio-contact-email { font-size:12px !important; overflow-wrap:anywhere; margin:14px 0 50px; }
+
+
+/* ============================================================
+   V36.4 / FOUNDER CONTACT ICONS
+   Always available before and after bio expansion.
+   The complete, accessible label is kept off-screen via aria-label.
+   ============================================================ */
+#people .founder .founder-contact-icons {
+  position: absolute;
+  z-index: 8;
+  right: 24px;
+  bottom: 19px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+#people .founder .founder-contact-icons a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border: 1px solid #bbcec0;
+  border-radius: 5px;
+  background: #edf3e9;
+  color: #1d604b;
+  text-decoration: none;
+  transition: background 180ms ease, border-color 180ms ease,
+    color 180ms ease, transform 180ms ease;
+}
+#people .founder .founder-contact-icons a:hover {
+  background: #dceade;
+  border-color: #588b72;
+  color: #0b4230;
+  transform: translateY(-2px);
+}
+#people .founder .founder-contact-icons a:focus-visible {
+  outline: 3px solid #a2b85f;
+  outline-offset: 3px;
+}
+/* Keep Bio / Back on the left, contact shortcuts on the right. */
+#people .founder.is-expanded .bio-toggle {
+  left: 23px;
+  right: auto;
+}
+#people .founder .bio-scroll { padding-bottom: 88px; }
+@media (max-width: 420px) {
+  #people .founder .founder-contact-icons { right: 13px; bottom: 18px; gap: 6px; }
+  #people .founder .founder-contact-icons a { width: 39px; height: 39px; }
+  #people .founder.is-expanded .bio-toggle { left: 13px; }
+}

@@ -1,4 +1,3 @@
-
 :root { color-scheme:dark; --navy:#071020; --navy2:#0b1930; --navy3:#0e2741; --cyan:#61d4fb; --cyan2:#a1ebff; --ink:#f0f7ff; --muted:#c4d7e8; --green:#45e1a2; --violet:#b78bff; --amber:#ffcd83; }
 * {box-sizing:border-box}
 html {scroll-behavior:smooth}
@@ -349,3 +348,194 @@ h1{margin:12px 0 12px}
 @media (max-width: 370px) {
   .study-07 .diagram-art .legend-items {font-size: 9px;column-gap: 8px;}
 }
+
+/* FOUNDATIONAL V37 TEST — persistent illuminated Velocity pathway.
+   Visited elements stay illuminated; active elements remain the brighter focus.
+   The active/visited classes are still controlled by the existing step navigation. */
+.study-07 .velocity-diagram .component.visited,
+.study-07 .velocity-diagram #humanGroup.visited {
+  opacity: .97;
+  filter: drop-shadow(0 0 8px #62caffaa);
+}
+.study-07 .velocity-diagram .flow.visited {
+  opacity: .96;
+  filter: drop-shadow(0 0 8px #42cbfac9);
+  animation-play-state: paused;
+}
+.study-07 .velocity-diagram .flow.return.visited {
+  filter: drop-shadow(0 0 8px #45e1a2c9);
+}
+.study-07 .velocity-diagram .flow.reprocessed.visited {
+  filter: drop-shadow(0 0 8px #b78bffc9);
+}
+.study-07 .velocity-diagram #humanGroup.visited {
+  filter: drop-shadow(0 0 9px #ffcd83bd);
+}
+.study-07 .velocity-diagram #engineGroup.visited .engine-ring {
+  stroke: #71cdea;
+  filter: drop-shadow(0 0 9px #55cbefc9);
+}
+.study-07 .velocity-diagram #resultsGroup.visited {
+  filter: drop-shadow(0 0 9px #45e1a2c9);
+}
+.study-07 .velocity-diagram .component.active {
+  opacity: 1;
+  filter: drop-shadow(0 0 15px #9de6ffeb);
+}
+.study-07 .velocity-diagram .flow.active {
+  opacity: 1;
+  filter: drop-shadow(0 0 14px #52d5fff0);
+  animation-play-state: running;
+}
+.study-07 .velocity-diagram .flow.return.active {filter: drop-shadow(0 0 14px #45e1a2f0)}
+.study-07 .velocity-diagram .flow.reprocessed.active {filter: drop-shadow(0 0 14px #b78bfff0)}
+.study-07 .velocity-diagram #humanGroup.active {filter: drop-shadow(0 0 17px #ffcd83f0)}
+.study-07 .velocity-diagram #engineGroup.active .engine-ring {
+  stroke: #a2eaff;
+  filter: drop-shadow(0 0 15px #72dcfff0);
+}
+.study-07 .velocity-diagram #resultsGroup.active {filter: drop-shadow(0 0 16px #45e1a2f0)}
+/* Existing cycle-specific opacity selectors must not dim the accumulated path. */
+.study-07 .stage[data-cycle="2"] .component.visited,
+.study-07 .stage[data-cycle="3"] .component.visited {opacity:.97}
+.study-07 .stage[data-cycle="2"] .component.active,
+.study-07 .stage[data-cycle="3"] .component.active {opacity:1}
+.study-07 .focus-guide i.focus-trail {background:#69cfff;box-shadow:0 0 9px #69cfffad}
+
+
+/* V37 COLOR CONTRAST TEST — active yellow, accumulated path bright white.
+   This overrides the V37 cyan-on-cyan focus treatment without changing navigation. */
+.study-07 {--velocity-current:#ffd34d;--velocity-past:#f1f9ff;}
+.study-07 .velocity-diagram .component.visited,
+.study-07 .velocity-diagram #humanGroup.visited,
+.study-07 .velocity-diagram #resultsGroup.visited {
+  opacity:1;
+  filter:drop-shadow(0 0 10px #f1f9ffb5);
+}
+.study-07 .velocity-diagram .component.visited .node {
+  stroke:var(--velocity-past);
+  stroke-width:2.7;
+}
+.study-07 .velocity-diagram .component.visited .node-title,
+.study-07 .velocity-diagram .component.visited .node-sub {
+  fill:var(--velocity-past);
+}
+.study-07 .velocity-diagram .flow.visited,
+.study-07 .velocity-diagram .flow.return.visited,
+.study-07 .velocity-diagram .flow.reprocessed.visited {
+  stroke:var(--velocity-past);
+  opacity:1;
+  stroke-width:5;
+  filter:drop-shadow(0 0 8px #f1f9ffd9);
+  animation-play-state:paused;
+}
+.study-07 .velocity-diagram #engineGroup.visited .engine-ring {
+  stroke:var(--velocity-past);
+  stroke-width:11;
+  filter:drop-shadow(0 0 11px #f1f9ffbb);
+}
+.study-07 .velocity-diagram #resultsGroup.visited rect,
+.study-07 .velocity-diagram #humanGroup.visited rect {
+  stroke:var(--velocity-past);
+  stroke-width:2.5;
+}
+.study-07 .velocity-diagram .component.active,
+.study-07 .velocity-diagram #humanGroup.active,
+.study-07 .velocity-diagram #resultsGroup.active {
+  opacity:1;
+  filter:drop-shadow(0 0 18px #ffd34de8);
+}
+.study-07 .velocity-diagram .component.active .node {
+  stroke:var(--velocity-current);
+  stroke-width:3.3;
+}
+.study-07 .velocity-diagram .component.active .node-title,
+.study-07 .velocity-diagram .component.active .node-sub {
+  fill:#fff2b2;
+}
+.study-07 .velocity-diagram .flow.active,
+.study-07 .velocity-diagram .flow.return.active,
+.study-07 .velocity-diagram .flow.reprocessed.active {
+  stroke:var(--velocity-current);
+  opacity:1;
+  stroke-width:5.5;
+  filter:drop-shadow(0 0 15px #ffd34dfa);
+  animation-play-state:running;
+}
+.study-07 .velocity-diagram #engineGroup.active .engine-ring,
+.study-07 .stage[data-cycle="2"] #engineGroup.active .engine-ring,
+.study-07 .stage[data-cycle="3"] #engineGroup.active .engine-ring {
+  stroke:var(--velocity-current);
+  stroke-width:13;
+  filter:drop-shadow(0 0 16px #ffd34de8);
+}
+.study-07 .velocity-diagram #resultsGroup.active rect,
+.study-07 .velocity-diagram #humanGroup.active rect {
+  stroke:var(--velocity-current);
+  stroke-width:3;
+}
+.study-07 .velocity-diagram #resultsGroup.active text,
+.study-07 .velocity-diagram #humanGroup.active text {fill:#fff2b2;}
+.study-07 .focus-guide i.focus-current {
+  background:var(--velocity-current);
+  box-shadow:0 0 10px #ffd34de0;
+}
+.study-07 .focus-guide i.focus-trail {
+  background:var(--velocity-past);
+  box-shadow:0 0 10px #f1f9ffbd;
+}
+.study-07 .guide-bar span.current {background:var(--velocity-current);box-shadow:0 0 9px #ffd34d96}
+.study-07 .guide-bar span.done {background:#dceeff;box-shadow:0 0 5px #dceeff7c}
+
+/* =============================================================
+   FOUNDATION V36.2 / CYCLE 3 — ENTIRE SYSTEM IN MOTION
+
+   Cycle 1: single active pathway in yellow; completed routes in white.
+   Cycle 2: focused feedback and learning loop.
+   Cycle 3: EVERY connection moves, retaining the yellow current focus
+            and white completed path from the approved source study.
+
+   Tune --full-loop-speed without changing the 9-step narration.
+   ============================================================= */
+.study-07 {
+  --full-loop-speed: 2.4s;
+}
+
+.study-07 .stage[data-cycle="3"] .velocity-diagram .flow {
+  animation-name: dash;
+  animation-duration: var(--full-loop-speed);
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-play-state: running;
+  opacity: 1;
+}
+
+/* The dashed human-judgment connections also become active. */
+.study-07 .stage[data-cycle="3"] #humanGroup .human-line {
+  stroke-dasharray: 6 8;
+  animation: dash calc(var(--full-loop-speed) * 1.3) linear infinite;
+}
+
+/* Subtle engine-core pulse: the core is working with the whole network. */
+@keyframes g2m-core-breathe {
+  0%, 100% { filter: drop-shadow(0 0 5px #a1dfff66); }
+  50% { filter: drop-shadow(0 0 15px #a1dfffaa); }
+}
+.study-07 .stage[data-cycle="3"] #engineGroup .engine-core {
+  animation: g2m-core-breathe 3.1s ease-in-out infinite;
+}
+
+/* Respect manual reduced-motion settings and OS accessibility preference. */
+.study-07 .stage.reduced[data-cycle="3"] .velocity-diagram .flow,
+.study-07 .stage.reduced[data-cycle="3"] #humanGroup .human-line,
+.study-07 .stage.reduced[data-cycle="3"] #engineGroup .engine-core {
+  animation: none !important;
+}
+@media (prefers-reduced-motion: reduce) {
+  .study-07 .stage[data-cycle="3"] .velocity-diagram .flow,
+  .study-07 .stage[data-cycle="3"] #humanGroup .human-line,
+  .study-07 .stage[data-cycle="3"] #engineGroup .engine-core {
+    animation: none !important;
+  }
+}
+
